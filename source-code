@@ -1,0 +1,1579 @@
+"Nonverbal Communication" by Allyson Gray
+The release number is 2.
+
+Release along with an interpreter. Release along with cover art ("The Ambler Automaton wearing a starry wizard's hat").
+
+Include Basic Screen Effects by Emily Short.
+Include Undo Output Control by Nathanael Nerode.
+
+
+Part 1 - Scenes
+
+[SCENES	===	===	===	===	===	===]
+
+[INTRO]
+
+When play begins:
+	say "It's the wee hours of a warm summer night and you're toiling away in your workshop, frantically preparing for an imminent invasion. You almost dropped your crystal ball in shock when your latest survey of the lands revealed a dragon heading straight for your tower![line break]And not just any dragon [unicode 8211] the fearsome Ignipter, who has an old grudge against you. You suspect that if you don't erect your defenses in time, the only thing left of your home by sunrise will be rubble.[line break]";
+	wait for any key;
+	say "[line break]> EXAMINE CRYSTAL [line break]A rare iridescent gem, packed so full of magical energy that it's practically buzzing. This should serve as the perfect core for your dragonproof armour...[line break]";
+	wait for any key;
+	say "[line break]> PUT CRYSTAL IN CHESTPLATE [line break]
+You delicately insert the gem into a small cavity on the front of the ornate metal chestplate, reciting an incantation to bind your protective Words to both objects.[line break]Suddenly, a stray spark of magic singes your hand, which reflexively jerks sideways. That's all it takes to break apart the hastily-assembled mechanism designed to harness the gem's power, and raw magical energy starts pouring into the room!";
+	wait for any key;
+	say "[line break]The swirling billows engulf you. As you lose consciousness, you feel a horrible turmoil rising up from your chest...";
+	wait for any key;
+	clear the screen;
+	wait for any key;
+	say "The sun is already warming your face when you awaken. A wave of panic rushes over you, and you jump to your feet[unicode 8211]";
+	wait for any key;
+	say "[line break]you jump to your feet[unicode 8211]";
+	wait for any key;
+	say "[line break]...why are your legs not obeying you?";
+	wait for any key;
+	say "[line break]It dawns on you: your Words are gone.[line break]Ever since you bound your life force to the English language, you've relied on them for almost every aspect of life, and now they've been pulled right out of your mouth at the worst possible time by the magical maelstrom![line break]Indeed, to a Word Mage, words are not only tools for communication, they're also the very root of a person's interactions with the outside world; without words, there's no way for you to LIGHT LAMP, EAT PASTA, or even just ENJOY POETRY.[line break][line break]But you don't have the luxury of waiting to get your words back. You'll just have to do without!";
+	wait for any key;
+	continue the action.
+	
+[Every turn while the player is in the Workshop and the player is unpeeped:
+	say "Lying on the workshop floor, you think about your predicament. You've thankfully held on to your ability to THINK and WAIT, but you can't seem to find the capacity for any other actions, and you notice that even your senses are greatly dulled.[line break]You're not too worried about your nouns; obedient and predictable, nouns always seek refuge in familiar objects whenever they're orphaned. Even in this sorry state, you should be able to call on their power when they're nearby.[line break]But verbs are independent, fickle things, and although you feel the presence of some of your most beloved verbs within the tower, you doubt you'll be able to compel them directly.[line break][line break]";
+	now the player is peeped.]
+	
+[MEMORIES]
+	
+[After opening the locket for the first time:
+	say "You open the locket. You find the word APOLOGIZE. [line break]You collect it. [line break]";
+	now the APOLOGIZE is sought;
+	wait for any key;
+	continue the action.]
+	
+[I CAN SEE CLEARLY NOW]
+	
+[Every turn while the player is wearing the Gazer Automaton and the Gazer Automaton is unpeeped:
+say "The strap that connects the Gazer Automaton's arms tightens abruptly across the back of your head, securing the glasses to your face. You can see your surroundings clearly now![line break]You take a moment to look around the room.";
+now the Gazer Automaton is peeped;
+continue the action.]
+
+[ENDINGS	===	===	===]
+
+Every turn while the player is in the Yard:
+	if the dragonsbane is sought and the APOLOGIZE is unsought:
+		say "The Ambler Automaton steps out into the yard. Your eyes widen as you're immediately confronted with the sight of Ignipter, who was waiting outside your tower![line break][line break]Luckily, the Collector Automaton runs out after you. The mere proximity to dragonsbane is enough to make the dragon sputter and cough up plumes of sickly black smoke. She leaps away in a panic and flies unsteadily towards the horizon.[line break][line break]";
+		wait for any key;
+		say "[line break]Months later, you've regained most of your words and are back to toiling away in your workshop (never again without gloves!)[line break]You haven't seen or heard from Ignipter since the incident, which is a relief.[line break]But without ever admitting it to anyone, even to yourself... deep down, you still miss her.";
+		end the story finally saying "ENDING 1 OUT OF 3: FIGHT";
+[]
+	if the dragonsbane is sought and the APOLOGIZE is sought:
+		say "The Ambler Automaton steps out into the yard. Your eyes widen as you're immediately confronted with the sight of Ignipter, who was waiting outside your tower![line break][line break]But the Collector Automaton runs out after you, carrying its toxic cargo. The mere proximity to dragonsbane is enough to make the dragon sputter and cough up plumes of sickly black smoke. She leaps away in a panic and flies unsteadily towards the horizon.[line break][line break]";
+		wait for any key;
+		say "[line break]Months later, you've regained most of your words and are back to toiling away in your workshop (never again without gloves!)[line break]You haven't seen or heard from Ignipter since the incident. Every time the thought of her crosses your mind, you feel a painful twinge of regret deep inside your chest, where your APOLOGIZE still slumbers...";
+		end the story finally saying "ENDING 1.5 OUT OF 3: FIGHT (BUT AT WHAT COST?)";
+[]
+	if the dragonsbane is unsought and the APOLOGIZE is unsought:
+		say "The Ambler Automaton steps out into the yard. Your eyes widen as you're immediately confronted with the sight of Ignipter, who was waiting outside your tower![line break]";
+		if the Basher Automaton is escaped, say "The Basher Automaton is not much help, waging war on your flowers and eviscerating bushes.";
+		if the Collector Automaton is escaped, say "Meanwhile, the Collector Automaton frolics about, collecting all the dirt it possibly can.";
+		say "[line break][line break]You can only watch helplessly as the beast lowers her head towards you, baring fangs almost as long as you are tall. Finding yourself completely defenseless, you feel a primal energy surge deep within you. A gnawing feeling of emptiness is suddenly replaced by the biggest adrenaline rush you've ever felt – the verb FLEE has galloped back to you, drawn in by your instincts and panic!
+With no hesitation and no effort spared, pushing your restricted physical and magical capacities to their limits, you abandon your tower and escape towards a nearby cave. Ignipter roars something in Draconic that you don't understand (presumably a threat) as you scramble away.";
+		wait for any key;
+		say "[line break]Months later, you've regained most of your words and come out of hiding. You haven't seen or heard from Ignipter since the incident, which is a relief. But you still live in fear of another invasion, and you often find yourself wondering what could have been...";
+		end the story finally saying "ENDING 2 OUT OF 3: FLIGHT";
+[]
+	if the APOLOGIZE is sought and the dragonsbane is unsought:
+		say "The Ambler Automaton steps out into the yard. Your eyes widen as you're immediately confronted with the sight of Ignipter, who was waiting outside your tower![line break][line break]You anxiously stare as she lowers her head towards you, her maw slightly ajar, revealing fangs almost as long as you are tall. But your gaze slowly shifts to her eyes, and you're surprised to find them filled with apprehension and sadness. Is this what you were so afraid of?[line break]The weight of the wasted decades, of the guilt, of the frustration at the futility of it all, is almost too much to bear. This time, you don't let yourself sink.
+[line break][line break]'I'm sorry.'[line break][line break]She roars mournfully.[line break][line break]'I'm so sorry...'";
+		wait for any key;
+		say "[line break]Months later, you've regained almost all of your words and have gone back to your various wizardly projects (you're currently upgrading your six-legged ambulatory machine, whom you've grown very fond of).[line break][line break]In many ways, you've returned to your old routines. But on your nightstand, a book on healthy communication lies atop [italic type]Draconic for Dummies[roman type], and you've purged all dragonsbane from your property.[line break]Whenever you spot a familiar dragon in your crystal ball, heading straight for your tower, you're now filled with a warm happiness.";
+		end the story finally saying "ENDING 3 OUT OF 3: FORGIVENESS".
+	
+[Every turn while the player is in the Yard and the dragon is unpeeped:
+		say "You are outdoors. [line break]";
+		wait for any key;
+		say "The dragon is here. [line break]";
+		wait for any key;
+		say "You do something. [line break]";
+		wait for any key;
+		now the dragon is peeped;
+		continue the action.]
+[Every turn while the player is in the Yard and the dragon is peeped:
+		say "You have met the dragon.";
+		end the story finally.]
+		
+Part 2 - Rooms
+	
+[ROOMS	===	===	===	===	===	===]
+	
+The Workshop is a room. Description of the Workshop is "[if unvisited]Lying on the workshop floor among the remains of your artefacts, you think about your predicament. You've thankfully held on to your ability to THINK and WAIT, but you can't seem to find the capacity for any other actions, and you notice that even your senses are greatly dulled.[line break][line break]You're not too worried about your nouns; obedient and predictable, nouns always seek refuge in familiar objects whenever they're orphaned. Even in this sorry state, you should be able to call on their power when they're nearby.[line break]But verbs are independent, fickle things, and although you feel the presence of some of your most beloved verbs within the tower, you doubt you'll be able to compel them directly.[line break][line break]Still, you need to find a way to survive this! You extend outwards what little magical power you still have, identifying nearby [bold type]nouns[roman type] that might prove helpful. What if you tried addressing them directly?[otherwise]You are in the [bold type]workshop[roman type].[line break]".
+The player is in the Workshop. [The player wears a long robe.]
+The Ambler Automaton is an object in the Workshop. The description is "The [bold type]Ambler Automaton[roman type] sits in a corner, inactive."
+The Depositor Automaton is an object in the Workshop. The description is "The [bold type]Depositor Automaton[roman type] is swaying above you."
+The Gazer Automaton is a wearable object in the Workshop. The description is "The [bold type]Gazer Automaton[roman type] beeps on the floor."
+The bedroomdoor is an object in the Workshop.
+
+
+The Bedroom is a room. "You are in your [bold type]bedroom[roman type]."
+[The Bedroom is below the Workshop.]
+The collapse is an object in the Bedroom.
+The dresser is a closed container in the Bedroom. The locket is a closed container inside the dresser. The APOLOGIZE is inside the locket.
+The Basher Automaton is an object in the Bedroom.
+[The bed is an object in the Bedroom.]
+
+
+The Kitchen is a room. Description of the Kitchen is "[if unvisited]You are in the [bold type]kitchen[roman type]. You feel the nearby presence of a potent noun...[otherwise]You are in the [bold type]kitchen[roman type]."
+The pantry is a closed container in the kitchen. The dragonsbane is an object inside the pantry.
+The Exposer Automaton is an object in the Kitchen.
+The Fastener Automaton is an object in the Kitchen.
+
+
+The Foyer is a room. "You are in the [bold type]foyer[roman type]."
+The front door is a container in the Foyer. The front door is closed. The yarddoor is an object inside the front door.
+The Collector Automaton is an object in the Foyer.
+
+
+The Yard is a room.
+The dragon is an object in the Yard.
+
+Part 3 - Custom Verbs
+
+[CUSTOM VERBS	====	====	====	====	====	====]
+
+Apologizing is an action applying to nothing. Understand "apologize" as apologizing.
+Check apologizing:
+	if the APOLOGIZE is unsought, say "That hasn't been part of your vocabulary for a long time..." instead.
+Carry out apologizing:
+	if the APOLOGIZE is sought, say "The one you need to apologize to is not here."
+		
+
+Xyzzying is an action applying to nothing. Understand "xyzzy", "plugh", "plover" and "fee fie foe foo" as xyzzying.
+Carry out xyzzying:
+	say "You can't channel the magic words without your word magic!"
+	
+
+Instead of thinking:
+	if the player is unsought:
+		say "You think about the next step in your plan.[line break][bracket][bold type]NOTE TO PLAYER:[roman type] you can type HELP or ABOUT for more detailed instructions, but be warned they may contain spoilers. Typing THINK again will show contextual hints about your progress in the game, and WAIT can be used at any time to gauge the state of a room.[line break]Here is a list of other available commands: UNDO, SAVE, RESTORE, RESTART, QUIT, CREDITS, TRANSCRIPT, VERIFY, VERSION.[close bracket]";
+		now the player is sought;
+	otherwise if the player is not wearing the Gazer Automaton:
+		say "You struggle to detect anything beyond your immediate surroundings. If only you could acquire something to bolster your senses...";
+	otherwise if the Ambler Automaton is unsteeded:
+		say "You can't walk or even crawl in your current state; you have to figure out a way to get around.";
+	otherwise if the APOLOGIZE is unsought and the dragonsbane is unnabbed:
+		say "There must be something you can find around the tower that will help you ward off the dragon.";
+	otherwise:
+		say "All that's left to do now is head outside and prepare for Ignipter's arrival."
+
+[HINT breaks everything??!?!!?!!?]
+Abouting is an action applying to nothing. Understand "help" and "about" as abouting.
+Carry out abouting:
+	if the player is abouted:
+		say "Nonverbal Communication uses nouns as its main command type instead of verbs [unicode 8211] for example, [bold type]WORKSHOP[roman type] or ME.[line break]Entering a noun will cause every verb in the vicinity (given physical form by the Automatons) to apply its action to the object containing the noun. Be aware that any broken object will lose its noun and verb, which will put it outside your sphere of influence![line break][line break]Three different endings can be obtained at the end of the game, the first of which has two possible variations. The ending you get depends on your approach (or lack thereof) to dealing with the dragon.[line break]Although most of the default commands have been disabled, these ones can still be used: UNDO, SAVE, RESTORE, RESTART, QUIT, CREDITS, WAIT, TRANSCRIPT, VERIFY, VERSION.";
+	if the player is unabouted:
+		say "[bracket][bold type]NOTE TO PLAYER:[roman type] this section may contain spoilers. Type ABOUT or HELP again to receive instructions and information about the game, or try THINK for less revealing contextual clues.[close bracket]";
+		now the player is abouted.
+	
+Dragoning is an action applying to nothing. Understand "Ignipter" and "dragon" as dragoning.
+Carry out dragoning:
+	say "The word is on the tip of your tongue... or it would be, if it hadn't already escaped your mouth! You sense its presence not too far away; it might be hiding somewhere near the tower."
+	
+Crediting is an action applying to nothing. Understand "credits" and "credit" as crediting.
+Carry out crediting:
+	say "Written and developed in Inform 7 by Allyson Gray (cover art drawn in FireAlpaca).[line break]Beta testing and many other kinds of support provided by the wonderful Alex Parker.[line break]Special thanks to the IF community for being an invaluable source of knowledge, motivation and innovation.[line break]Extensions used: Basic Screen Effects by Emily Short and Undo Output Control by Nathanael Nerode."
+	
+Automatoning is an action applying to nothing. Understand "automaton", "automatons" and "automata" as automatoning.
+Carry out automatoning:
+	say "Word magic requires precision! Which automaton do you wish to extend your magic to?"
+	
+Backgrounding is an action applying to nothing. Understand "rubble", "carpet", "rug", "shelves", "shelf", "wall", "walls", "floor", "stairs", "stairway", "tapestries", "tapestry", "doorway", "rope", "pole", "hand", "hammer", "hammers", "bucket", "lint", "steps", "base", "arm", "tile", "brick", "bricks", "food", "ingredients", "tower", "bas-relief", "bas-reliefs", "window", "sun", "sunlight" and "entryway" as backgrounding.
+Carry out backgrounding:
+	say "You don't sense enough power in that word for what you're trying to accomplish; your magic is drawn to the more helpful [bold type]nouns[roman type] in your vicinity."
+	
+[A-ing is an action applying to nothing. Understand "GO" as A-ing.
+Carry out A-ing:
+	say "You can't go!"
+B-ing is an action applying to nothing. Understand "" as -ing.
+Carry out B-ing:
+C-ing is an action applying to nothing. Understand "" as -ing.
+Carry out C-ing:
+D-ing is an action applying to nothing. Understand "" as -ing.
+Carry out D-ing:
+E-ing is an action applying to nothing. Understand "" as -ing.
+Carry out E-ing:
+F-ing is an action applying to nothing. Understand "" as -ing.
+Carry out F-ing:
+G-ing is an action applying to nothing. Understand "" as -ing.
+Carry out G-ing]
+	
+
+Chapter 3.1 - Rooms
+
+[ROOMS	====	====	====]
+
+[FUN FACT: a bad copy/paste job in the first release of the game led to a line like this being in every room transition:
+	if the dragonsbane is nabbed, now the locket is in the Bedroom;
+this led to the locket wandering around the tower on its own, even when the dresser was still unopened :)
+Big thanks to Tabitha for bringing the issue to my attention!]
+
+[WORKSHOP]
+
+Workshopping is an action applying to nothing. Understand "workshop" and "the workshop" as workshopping.
+Ambler workshopping is an action applying to nothing.
+Basher workshopping is an action applying to nothing.
+Collector workshopping is an action applying to nothing.
+Depositor workshopping is an action applying to nothing.
+Exposer workshopping is an action applying to nothing.
+Fastener workshopping is an action applying to nothing.
+Gazer workshopping is an action applying to nothing.
+
+Check workshopping:
+	if the player is not in the Workshop, say "The word is on the tip of your tongue... or it would be, if it hadn't already escaped your mouth! You sense its presence nearby; it might be hiding somewhere in the tower." instead.
+Carry out workshopping:
+	if the player is in the workshop, say "You extend your energy towards the workshop. As your magic touches the noun, its power briefly ebbs outwards, beckoning to all verbs near you.";
+After workshopping:
+	if the Ambler Automaton is visible, try ambler workshopping;
+	if the Basher Automaton is visible, try basher workshopping;
+	if the Collector Automaton is visible, try collector workshopping;
+	if the Depositor Automaton is visible, try depositor workshopping;
+	if the Exposer Automaton is visible, try exposer workshopping;
+	if the Fastener Automaton is visible, try fastener workshopping;
+	if the Gazer Automaton is visible, try gazer workshopping.
+	
+Carry out ambler workshopping:
+	if the Ambler Automaton is unhoisted:
+		say "The [bold type]Ambler Automaton[roman type] prances around the workshop.";
+		now the Ambler Automaton is offgazer;
+		now the Ambler Automaton is offme;
+	if the Ambler Automaton is hoisted, say "The [bold type]Ambler Automaton[roman type] jiggles its legs in midair."
+Carry out basher workshopping:
+	say "This line should never appear!"
+Carry out collector workshopping:
+	say "This line should never appear!"
+Carry out depositor workshopping:
+	if everything is unhoisted, say "The [bold type]Depositor Automaton[roman type] claws at the stone walls, but fails to pick up the workshop.";
+	if the Ambler Automaton is hoisted:
+		say "The [bold type]Depositor Automaton[roman type] sets the Ambler Automaton down on the workshop's floor.";
+		now the Ambler Automaton is unhoisted;
+	if the Gazer Automaton is hoisted:
+		say "The [bold type]Depositor Automaton[roman type] gently places the Gazer Automaton on the floor of the workshop.";
+		now the Gazer Automaton is unhoisted;
+	if the player is hoisted:
+		say "The [bold type]Depositor Automaton[roman type] lays your body back down on the workshop's stone floor.";
+		now the player is unhoisted.
+Carry out exposer workshopping:
+	say "This line should never appear!"
+Carry out fastener workshopping:
+	say "This line should never appear!"
+Carry out gazer workshopping:
+	if the player is not wearing the Gazer Automaton, say "The [bold type]Gazer Automaton[roman type] beeps.";
+	if the player is wearing the Gazer Automaton, say "The [bold type]Gazer Automaton[roman type] beeps and displays a description of the workshop:[line break]'The workshop is where you do all of your most important work. It's currently in complete disarray, and even the stone entryway seems to be crumbling.'"
+	
+[BEDROOM]
+	
+Bedrooming is an action applying to nothing. Understand "bedroom" as bedrooming.
+Ambler bedrooming is an action applying to nothing.
+Basher bedrooming is an action applying to nothing.
+Collector bedrooming is an action applying to nothing.
+Depositor bedrooming is an action applying to nothing.
+Exposer bedrooming is an action applying to nothing.
+Fastener bedrooming is an action applying to nothing.
+Gazer bedrooming is an action applying to nothing.
+
+Check bedrooming:
+	if the player is in the Foyer, say "The word is on the tip of your tongue... or it would be, if it hadn't already escaped your mouth! You sense its presence nearby; it might be hiding somewhere in the tower." instead.
+
+Carry out bedrooming: 
+	if the player is wearing the Gazer Automaton and the player is in the Workshop or the player is in the Bedroom or the player is in the Kitchen:
+		say "You extend your energy towards the bedroom. As your magic touches the noun, its power briefly ebbs outwards, beckoning to all verbs near you.";
+		if the Basher Automaton is visible, now the Basher Automaton is wanderlusted;
+		if the Collector Automaton is visible, now the Collector Automaton is wanderlusted;
+	if the player is not wearing the Gazer Automaton and the player is in the Workshop, say "The word is on the tip of your tongue... or it would be, if it hadn't already escaped your mouth! You can't see well enough right now to detect anything beyond this room."
+After bedrooming:
+	if the Ambler Automaton is visible and the player is wearing the Gazer Automaton, try ambler bedrooming;
+	if the player is in the Bedroom and the bedroomdoor is unescaped:
+		[say "As the Ambler Automaton makes its way down the stairs, the workshop's entryway collapses behind you! Large pieces of rubble now block the path upstairs.";]
+		now the bedroomdoor is escaped;
+	if the Basher Automaton is wanderlusted and the player is wearing the Gazer Automaton and the Basher Automaton is unsmushed, try basher bedrooming;
+	if the Collector Automaton is wanderlusted and the player is wearing the Gazer Automaton and the Collector Automaton is unsmushed, try collector bedrooming;
+	if the Depositor Automaton is visible and the player is wearing the Gazer Automaton, try depositor bedrooming;
+	if the Exposer Automaton is visible and the player is wearing the Gazer Automaton and the Exposer Automaton is unsmushed, try exposer bedrooming;
+	if the Fastener Automaton is visible and the player is wearing the Gazer Automaton and the Fastener Automaton is unsmushed, try fastener bedrooming;
+	if the Gazer Automaton is visible and the player is wearing the Gazer Automaton, try gazer bedrooming.
+	
+Carry out ambler bedrooming:
+	if the player is not in the bedroom and the Ambler Automaton is hoisted:
+		say "The [bold type]Ambler Automaton[roman type] twists around in the Depositor Automaton's grasp, but remains firmly hoisted.";
+	if the player is not in the bedroom and the Ambler Automaton is unhoisted:
+		if the Ambler Automaton is steeded and the Ambler Automaton is unhoisted, say "The [bold type]Ambler Automaton[roman type] walks you to the bedroom.";
+		if the Ambler Automaton is steeded and the Ambler Automaton is unhoisted, now the player is in the bedroom;
+		if the Ambler Automaton is steeded and the Ambler Automaton is unhoisted, now the Ambler Automaton is in the bedroom;
+		if the Ambler Automaton is unsteeded and the Ambler Automaton is unhoisted, say "The [bold type]Ambler Automaton[roman type] walks down the stairs and into the bedroom, disappearing from view.";
+		if the Ambler Automaton is unsteeded and the Ambler Automaton is unhoisted, now the Ambler Automaton is in the Bedroom;
+		now the Ambler Automaton is offme;
+		now the Ambler Automaton is offgazer;
+	otherwise:
+		say "The [bold type]Ambler Automaton[roman type] spins around on the bedroom rug."
+Carry out basher bedrooming:
+	if the Basher Automaton is wanderlusted and the Basher Automaton is not in the Bedroom:
+		say "The [bold type]Basher Automaton[roman type] clambers up the stairs and starts hammering at your bedroom rug.";
+		now the Basher Automaton is in the Bedroom;
+	else if the Basher Automaton is wanderlusted and the Basher Automaton is in the Bedroom:
+		say "The [bold type]Basher Automaton[roman type] hammers at the tapestries on your bedroom wall." instead;
+	now the Basher Automaton is homebodied.
+Carry out collector bedrooming:
+	if the Collector Automaton is wanderlusted and the Collector Automaton is not in the Bedroom:
+		say "The [bold type]Collector Automaton[roman type] skips into the bedroom and enthusiastically jumps around, trying to collect the room itself.";
+		now the Collector Automaton is in the Bedroom;
+		if the Exposer Automaton is nabbed, now the Exposer Automaton is in the Bedroom;
+		if the locket is nabbed, now the locket is in the Bedroom;
+		if the dragonsbane is nabbed, now the dragonsbane is in the Bedroom;
+	else if the Collector Automaton is wanderlusted and the Collector Automaton is in the Bedroom:
+		say "The [bold type]Collector Automaton[roman type] jumps around, trying to collect the bedroom itself." instead;
+	now the Collector Automaton is homebodied.
+Carry out depositor bedrooming:
+	if everything is unhoisted, say "The [bold type]Depositor Automaton[roman type] swings its claw towards the doorway and makes grabbing gestures towards the bedroom.";
+	if the Ambler Automaton is hoisted:
+		say "The [bold type]Depositor Automaton[roman type] strains its claw towards the bedroom, but is unable to reach that far. The Ambler Automaton sways gently while still suspended in the air.";
+	if the Gazer Automaton is hoisted:
+		say "The [bold type]Depositor Automaton[roman type] strains its claw towards the bedroom, but is unable to reach that far. The Gazer Automaton remains up in the air.";
+	if the player is hoisted:
+		say "The [bold type]Depositor Automaton[roman type] strains its claw towards the bedroom but is unable to reach that far. Swaying in its grasp, you feel slightly nauseous."
+Carry out exposer bedrooming:
+	say "The [bold type]Exposer Automaton[roman type] moves its rope across the bedroom floor in a sweeping motion."
+Carry out fastener bedrooming:
+	say "The Fastener slaps the bedroom."
+Carry out gazer bedrooming:
+	if the player is in the Bedroom, say "The [bold type]Gazer Automaton[roman type] beeps and displays a description of the bedroom:[line break]'Your bedroom is made cozier by an assortment of rugs and tapestries that cover the cold stone surfaces. Thankfully, everything seems mostly intact despite the destruction that happened upstairs.'";
+	otherwise say "The [bold type]Gazer Automaton[roman type] beeps and displays a description of the bedroom:[line break]'You can just barely see your bedroom through the doorway. If you can find a way to get down the steps, you'll be able to start searching for a dragon deterrent.'"
+	
+[KITCHEN]
+	
+Kitchening is an action applying to nothing. Understand "kitchen" as kitchening.
+Ambler kitchening is an action applying to nothing.
+Basher kitchening is an action applying to nothing.
+Collector kitchening is an action applying to nothing.
+Depositor kitchening is an action applying to nothing.
+Exposer kitchening is an action applying to nothing.
+Fastener kitchening is an action applying to nothing.
+Gazer kitchening is an action applying to nothing.
+
+Check kitchening:
+	if the player is in the Workshop, say "The word is on the tip of your tongue... or it would be, if it hadn't already escaped your mouth! You sense its presence nearby; it might be hiding somewhere in the tower." instead.
+
+Carry out kitchening:
+	if the player is not in the kitchen:
+		now the Exposer Automaton is unpeeped;
+		now the Fastener Automaton is unpeeped;
+	if the player is in the Bedroom or the player is in the Kitchen or the player is in the Foyer:
+		say "You extend your energy towards the kitchen. As your magic touches the noun, its power briefly ebbs outwards, beckoning to all verbs near you.";
+		if the Basher Automaton is visible, now the Basher Automaton is wanderlusted;
+		if the Collector Automaton is visible, now the Collector Automaton is wanderlusted;
+	otherwise:
+		say "The word is on the tip of your tongue... or it would be, if it hadn't already escaped your mouth! You sense its presence nearby; it might be hiding somewhere in the tower."
+After kitchening:
+	if the Ambler Automaton is visible, try ambler kitchening;
+	if the Basher Automaton is wanderlusted and the Basher Automaton is unsmushed, try basher kitchening;
+	if the Collector Automaton is wanderlusted and the Collector Automaton is unsmushed, try collector kitchening;
+	if the Depositor Automaton is visible, try depositor kitchening;
+	[if the Exposer Automaton is peeped:
+		say "The [bold type]Exposer Automaton[roman type] is still on the kitchen floor, its rope waving softly in the air.";
+		now the Exposer Automaton is unpeeped;]
+	if the Exposer Automaton is peeped and the Exposer Automaton is unsmushed, try exposer kitchening;
+	if the Exposer Automaton is unpeeped and the Exposer Automaton is unsmushed and the Exposer Automaton is unnabbed, say "The [bold type]Exposer Automaton[roman type] is on the floor of the kitchen, resting on its small pyramidal base.[line break]";
+	if the Fastener Automaton is peeped and the Fastener Automaton is unsmushed, try fastener kitchening;
+	if the Fastener Automaton is unpeeped and the Fastener Automaton is unsmushed, say "[line break]The [bold type]Fastener Automaton[roman type] is in the middle of the kitchen, its metal arm extending up from the floor.";
+	if the Gazer Automaton is visible, try gazer kitchening.
+	
+Carry out ambler kitchening:
+	if the player is not in the kitchen:
+		say "The [bold type]Ambler Automaton[roman type] walks you to the kitchen.";
+		[if the Exposer Automaton is in the Kitchen, now the Exposer Automaton is peeped;]
+		now the player is in the kitchen;
+		now the Ambler Automaton is in the kitchen;
+	otherwise:
+		say "The [bold type]Ambler Automaton[roman type] spins around on the kitchen tile."
+Carry out basher kitchening:
+	if the Basher Automaton is wanderlusted and the Basher Automaton is not in the Kitchen:
+		say "The [bold type]Basher Automaton[roman type] barges into the room and attacks your kitchen tile.";
+		now the Basher Automaton is in the Kitchen;
+	else if the Basher Automaton is wanderlusted and the Basher Automaton is in the Kitchen:
+		say "The [bold type]Basher Automaton[roman type] hammers at the kitchen wall, making your little shelves rattle and creak." instead;
+	now the Basher Automaton is homebodied.
+Carry out collector kitchening:
+	if the Collector Automaton is wanderlusted and the Collector Automaton is not in the Kitchen:
+		say "The [bold type]Collector Automaton[roman type] saunters into the kitchen and starts jumping against the walls, trying to scoop them up.";
+		now the Collector Automaton is in the Kitchen;
+		if the Exposer Automaton is nabbed, now the Exposer Automaton is in the Kitchen;
+		if the locket is nabbed, now the locket is in the Kitchen;
+		if the dragonsbane is nabbed, now the dragonsbane is in the Kitchen;
+	else if the Collector Automaton is wanderlusted and the Collector Automaton is in the Kitchen:
+		say "The [bold type]Collector Automaton[roman type] skips from wall to wall, trying to scoop them up." instead;
+	now the Collector Automaton is homebodied.
+Carry out depositor kitchening:
+	say "The [bold type]Depositor Automaton[roman type]  the kitchen."
+Carry out exposer kitchening:
+	say "The [bold type]Exposer Automaton[roman type]'s rope dances across the kitchen floor."
+Carry out fastener kitchening:
+	say "The [bold type]Fastener Automaton[roman type] taps the kitchen's bricks and tiles, making sure there are no openings to be found."
+Carry out gazer kitchening:
+	say "The [bold type]Gazer Automaton[roman type] beeps and displays a description of the kitchen:[line break]'Well-stocked with food as well as a variety of magical ingredients.'";
+	now the Exposer Automaton is peeped;
+	now the Fastener Automaton is peeped.
+	
+[FOYER]
+	
+Foyering is an action applying to nothing. Understand "foyer" as foyering.
+Ambler foyering is an action applying to nothing.
+Basher foyering is an action applying to nothing.
+Collector foyering is an action applying to nothing.
+Depositor foyering is an action applying to nothing.
+Exposer foyering is an action applying to nothing.
+Fastener foyering is an action applying to nothing.
+Gazer foyering is an action applying to nothing.
+
+Check foyering:
+	if the player is not in the Kitchen and the player is not in the Foyer, say "The word is on the tip of your tongue... or it would be, if it hadn't already escaped your mouth! You sense its presence nearby; it might be hiding somewhere in the tower." instead.
+Carry out foyering:
+	if the player is in the Kitchen or the player is in the Foyer:
+		say "You extend your energy towards the foyer. As your magic touches the noun, its power briefly ebbs outwards, beckoning to all verbs near you.";
+		if the Basher Automaton is visible, now the Basher Automaton is wanderlusted;
+		if the Collector Automaton is visible, now the Collector Automaton is wanderlusted;
+	otherwise:
+		say "The word is on the tip of your tongue... or it would be, if it hadn't already escaped your mouth! You sense its presence nearby; it might be hiding somewhere in the tower."
+After foyering:
+	if the Ambler Automaton is visible, try ambler foyering;
+	if the Basher Automaton is wanderlusted and the Basher Automaton is unsmushed, try basher foyering;
+	if the Collector Automaton is wanderlusted and the Collector Automaton is unsmushed, try collector foyering;
+	if the Depositor Automaton is visible, try depositor foyering;
+	if the Exposer Automaton is visible and the Exposer Automaton is unsmushed, try exposer foyering;
+	if the Fastener Automaton is visible and the Fastener Automaton is unsmushed, try fastener foyering;
+	if the Gazer Automaton is visible, try gazer foyering.
+	
+Carry out ambler foyering:
+	if the player is not in the Foyer:
+		say "The [bold type]Ambler Automaton[roman type] walks you to the foyer.";
+		now the player is in the Foyer;
+		now the Ambler Automaton is in the Foyer;
+	otherwise:
+		say "The [bold type]Ambler Automaton[roman type] spins around on the plush carpet."
+Carry out basher foyering:
+	if the Basher Automaton is wanderlusted and the Basher Automaton is not in the Foyer:
+		say "The [bold type]Basher Automaton[roman type] pops in after you and unleashes its fury on the plush carpet of the foyer.";
+		now the Basher Automaton is in the Foyer;
+	else if the Basher Automaton is wanderlusted and the Basher Automaton is in the Foyer:
+		say "The [bold type]Basher Automaton[roman type] swings its hammers at the solid stone bas-reliefs that decorate the walls of the foyer." instead;
+	now the Basher Automaton is homebodied.
+Carry out collector foyering:
+	if the Collector Automaton is wanderlusted and the Collector Automaton is not in the Foyer:
+		say "The [bold type]Collector Automaton[roman type] barrels down the stairs and starts scooping at the floor. It manages to pick up a piece of lint and looks very pleased with itself.";
+		now the Collector Automaton is in the Foyer;
+		if the Exposer Automaton is nabbed, now the Exposer Automaton is in the Foyer;
+		if the locket is nabbed, now the locket is in the Foyer;
+		if the dragonsbane is nabbed, now the dragonsbane is in the Foyer;
+	else if the Collector Automaton is wanderlusted and the Collector Automaton is in the Foyer:
+		say "The [bold type]Collector Automaton[roman type] laboriously pushes against the base of a wall, hoping to tip it into its bucket." instead;
+	now the Collector Automaton is homebodied.
+Carry out depositor foyering:
+	say "The Depositor Automaton  the foyer."
+Carry out exposer foyering:
+	say "The [bold type]Exposer Automaton[roman type] curiously picks at the foyer's carpeted floor."
+Carry out fastener foyering:
+	say "The Fastener Automaton  the foyer."
+Carry out gazer foyering:
+	say "The [bold type]Gazer Automaton[roman type] beeps and displays a description of the foyer:[line break]'A room designed to be beautiful and inviting. If you ever had guests, they'd surely appreciate the warm welcome.'"
+	
+[YARD]
+	
+Yarding is an action applying to nothing. Understand "yard" and "front yard" as yarding.
+Ambler yarding is an action applying to nothing.
+Basher yarding is an action applying to nothing.
+Collector yarding is an action applying to nothing.
+Depositor yarding is an action applying to nothing.
+Exposer yarding is an action applying to nothing.
+Fastener yarding is an action applying to nothing.
+Gazer yarding is an action applying to nothing.
+
+Check yarding:
+	if the player is not in the Foyer, say "The word is on the tip of your tongue... or it would be, if it hadn't already escaped your mouth! You sense its presence not too far away; it might be hiding somewhere near the tower." instead.
+Carry out yarding:
+	if the player is in the Foyer and the front door is open:
+		say "You extend your energy towards the yard. As your magic touches the noun, its power briefly ebbs outwards, beckoning to all verbs near you.";
+		if the Basher Automaton is visible and the Basher Automaton is unsmushed, now the Basher Automaton is escaped;
+		if the Collector Automaton is visible:
+			now the Collector Automaton is escaped;
+			if the dragonsbane is nabbed, now the dragonsbane is sought;
+		if the Exposer Automaton is visible, now the Exposer Automaton is escaped;
+	otherwise:
+		say "The word is on the tip of your tongue... or it would be, if it hadn't already escaped your mouth! You sense its presence not too far away; it might be hiding somewhere near the tower."
+After yarding:
+	if the Ambler Automaton is visible and the front door is open, try ambler yarding;
+	if the Basher Automaton is visible and the front door is open, try basher yarding;
+	if the Collector Automaton is visible and the front door is open, try collector yarding;
+	if the Depositor Automaton is visible, try depositor yarding;
+	if the Exposer Automaton is visible and the front door is open, try exposer yarding;
+	if the Fastener Automaton is visible, try fastener yarding;
+	if the Gazer Automaton is visible and the front door is open, try gazer yarding.
+	
+Carry out ambler yarding:
+	say "The [bold type]Ambler Automaton[roman type] carries you outside.";
+	now the player is in the Yard.
+[Carry out basher yarding:
+	say "The Basher Automaton  the yard."
+Carry out collector yarding:
+	say "The Collector Automaton  the yard."
+Carry out depositor yarding:
+	say "The Depositor Automaton  the yard."
+Carry out exposer yarding:
+	say "The Exposer Automaton  the yard."
+Carry out fastener yarding:
+	say "The Fastener Automaton  the yard."
+Carry out gazer yarding:
+	say "The Gazer Automaton beeps.[line break]'The foyer is a fancy-looking room.'"]
+	
+Chapter 3.2 - Player and Objects
+
+[PLAYER AND OBJECTS	===	===	===]
+
+[PLAYER]
+
+Meing is an action applying to nothing. Understand "me", "moi", "self", "myself", "my self", "wizard", "word mage" and "mage" as meing.
+Ambler meing is an action applying to nothing.
+Basher meing is an action applying to nothing.
+Collector meing is an action applying to nothing.
+Depositor meing is an action applying to nothing.
+Exposer meing is an action applying to nothing.
+Fastener meing is an action applying to nothing.
+Gazer meing is an action applying to nothing.
+
+Carry out meing: say "You focus your energy on yourself, sending out a wave of magic that beckons to all nearby verbs."
+After meing:
+	if the Ambler Automaton is visible and the Ambler Automaton is unsmushed, try ambler meing;
+	if the Basher Automaton is visible and the Basher Automaton is unsmushed, try basher meing;
+	[if the Basher Automaton is visible and the Basher Automaton is smushed, say "The Basher Automaton blah blah";]
+	if the Collector Automaton is visible and the Collector Automaton is unsmushed, try collector meing;
+	if the Depositor Automaton is visible and the Depositor Automaton is unsmushed, try depositor meing;
+	if the Exposer Automaton is visible and the Exposer Automaton is unsmushed, try exposer meing;
+	if the Fastener Automaton is visible and the Fastener Automaton is unsmushed, try fastener meing;
+	if the Gazer Automaton is visible and the Gazer Automaton is unsmushed, try gazer meing.
+	
+Carry out ambler meing:
+	if the Ambler Automaton is steeded, say "The [bold type]Ambler Automaton[roman type] spins around on itself.";
+	if the Ambler Automaton is unsteeded and the Ambler Automaton is hoisted, say "The [bold type]Ambler Automaton[roman type] wiggles in the Depositor Automaton's grasp.";
+	if the Ambler Automaton is unsteeded and the Ambler Automaton is unhoisted and the Ambler Automaton is offme, say "The [bold type]Ambler Automaton[roman type] walks towards you.";
+	if the Ambler Automaton is onme, say "The [bold type]Ambler Automaton[roman type] dances in place over you.";
+	if the player is hoisted, say "The [bold type]Ambler Automaton[roman type] stands underneath where you are suspended.";
+Carry out basher meing:
+	if the Basher Automaton is unsmushed:
+		say "The [bold type]Basher Automaton[roman type] swiftly rolls up to you. The last thing you see is its hammer arm swinging towards you...";
+		now the player is smushed;
+		end the story saying "VIOLENCE ISN'T THE ANSWER TO THIS ONE".
+Carry out collector meing:
+	if the player is unsmushed and the Collector Automaton is unsmushed, say "The [bold type]Collector Automaton[roman type] makes a valiant attempt to pick you up, but only manages to make your feet bounce around."
+Carry out depositor meing:
+	if the player is hoisted, say "The [bold type]Depositor Automaton[roman type] keeps you in its claw.";
+	if everything is unhoisted:
+		if the Ambler Automaton is offme:
+			say "The [bold type]Depositor Automaton[roman type] picks you up in its claw, hoisting you above the room.";
+		if the Ambler Automaton is onme:
+			say "The [bold type]Depositor Automaton[roman type] carefully nabs you out from under the Ambler Automaton, and hoists you above the room.";
+			now the Ambler Automaton is offme;
+		now the player is offgazer;
+		now the Ambler Automaton is unsteeded;
+		now the player is hoisted;
+	if the Gazer Automaton is hoisted:
+		say "The [bold type]Depositor Automaton[roman type] places the Gazer Automaton on your face. The Gazer Automaton's arms firmly grip the sides of your head, securing the glasses to your face. You can detect objects much further away now![line break]As you suspected, your verbs have chosen suitable vessels to keep expressing their power, forming various automatons (inanimate objects that gain life through magic). If memory serves you right, the ABC principle should apply here: the order of priority for words matches their alphabetical order.[line break]Maybe those stubborn verbs can still help you survive, if you play your cards right...";
+		now the player is wearing the Gazer Automaton;
+		now the Gazer Automaton is peeped;
+		now the Gazer Automaton is unhoisted;
+	if the Ambler Automaton is hoisted:
+		say "The [bold type]Depositor Automaton[roman type] places the Ambler Automaton on top of you.";
+		now the Ambler Automaton is onme;
+		now the Ambler Automaton is unhoisted.
+Carry out exposer meing:
+	if the player is unsmushed and the Exposer Automaton is unsmushed, say "The [bold type]Exposer Automaton[roman type] uses its rope to open your mouth. You promptly close it."
+Carry out fastener meing:
+	if the player is unsmushed and the Fastener Automaton is unsmushed, say "The [bold type]Fastener Automaton[roman type] pats your eyes closed. You reopen them."
+Carry out gazer meing:
+	if the player is unsmushed and the player is wearing the Gazer Automaton, say "The [bold type]Gazer Automaton[roman type] beeps and displays a description of you:[line break]'A powerful Word Mage who also dabbles in potion-making and enchanted mechanics. Currently in a rather pitiful state.'";
+	if the player is unsmushed and the player is not wearing the Gazer Automaton, say "The [bold type]Gazer Automaton[roman type] beeps."
+	
+[DRESSER]
+
+Dressering is an action applying to nothing. Understand "dresser", "drawers" and "drawer" as dressering.
+Ambler dressering is an action applying to nothing.
+Basher dressering is an action applying to nothing.
+Collector dressering is an action applying to nothing.
+Depositor dressering is an action applying to nothing.
+Exposer dressering is an action applying to nothing.
+Fastener dressering is an action applying to nothing.
+Gazer dressering is an action applying to nothing.
+
+Check dressering:
+	if the dresser is smushed, say "You no longer sense the presence of that noun; it must have fled after its vessel was detroyed." instead.
+Check collector dressering:  
+	  if the dresser is smushed, say "The [bold type]Collector Automaton[roman type] fails to find a noun to act upon." instead.
+Check exposer dressering:    
+	  if the dresser is smushed, say "The [bold type]Exposer Automaton[roman type] fails to find a noun to act upon." instead.
+Check fastener dressering:   
+	  if the dresser is smushed, say "The [bold type]Fastener Automaton[roman type] fails to find a noun to act upon." instead.
+Check gazer dressering:
+	  if the dresser is smushed, say "The [bold type]Gazer Automaton[roman type] fails to find a noun to act upon." instead.	
+
+Carry out dressering:
+	if the dresser is visible, say "You extend your energy towards the dresser. As your magic touches the noun, its power briefly ebbs outwards, beckoning to all verbs near you.";
+	otherwise say "The word is on the tip of your tongue... or it would be, if it hadn't already escaped your mouth! You sense its presence nearby; it might be hiding somewhere in the tower."
+After dressering:
+	if the Ambler Automaton is visible and the Ambler Automaton is unsmushed and the dresser is visible, try ambler dressering;
+	if the Basher Automaton is visible and the Basher Automaton is unsmushed and the dresser is visible, try basher dressering;
+	if the Collector Automaton is visible and the Collector Automaton is unsmushed and the dresser is visible, try collector dressering;
+	if the Depositor Automaton is visible and the Depositor Automaton is unsmushed and the dresser is visible, try depositor dressering;
+	if the Exposer Automaton is visible and the Exposer Automaton is unsmushed and the dresser is visible, try exposer dressering;
+	if the Fastener Automaton is visible and the Fastener Automaton is unsmushed and the dresser is visible, try fastener dressering;
+	if the Gazer Automaton is visible and the dresser is visible, try gazer dressering.
+	
+Carry out ambler dressering:
+	say "The [bold type]Ambler Automaton[roman type] tries to walk into the dresser with a thud."
+Carry out basher dressering:
+	say "With a heavy blow, the [bold type]Basher Automaton[roman type] reduces the dresser to pieces, burying its contents under jagged wooden shards. You feel the noun's power fading away.";
+	now the dresser is smushed;
+	now the dresser is closed.
+Carry out collector dressering:
+	say "The [bold type]Collector Automaton[roman type] rubs against the drawer handles, trying its hardest to pick up the dresser."
+Carry out depositor dressering:
+	say "The Depositor Automaton  the dresser."
+Carry out exposer dressering:
+	if the dresser is open:
+		say "The [bold type]Exposer Automaton[roman type] slides its rope across the wooden drawers, but finds that they're already open.";
+	if the dresser is closed:
+		say "The [bold type]Exposer Automaton[roman type] wraps its rope around the handle of each drawer, briskly yanking them open.[line break] A small golden locket falls out from somewhere inside the dresser, hitting the floor with a melodic ding. You sense something hiding within it that terrifies you.";
+		now the dresser is open.
+Carry out fastener dressering:
+	say "The Fastener Automaton  the dresser."
+Carry out gazer dressering:
+	say "The [bold type]Gazer Automaton[roman type] beeps and displays a description of the dresser:[line break]'A wooden dresser adorned with intricate carvings.'";
+	if the dresser is closed, say "Its drawers are currently closed.";
+	if the dresser is open, say "Its drawers are currently open, filled with things that you have no use for right now."
+
+[LOCKET]
+
+Locketing is an action applying to nothing. Understand "locket" as locketing.
+Ambler locketing is an action applying to nothing.
+Basher locketing is an action applying to nothing.
+Collector locketing is an action applying to nothing.
+Depositor locketing is an action applying to nothing.
+Exposer locketing is an action applying to nothing.
+Fastener locketing is an action applying to nothing.
+Gazer locketing is an action applying to nothing.
+
+Check locketing:
+	if the locket is smushed, say "You no longer sense the presence of that noun; it must have fled after its vessel was detroyed." instead.
+Carry out locketing:
+	if the locket is visible, say "You extend your energy towards the locket. As your magic touches the noun, its power briefly ebbs outwards, beckoning to all verbs near you.";
+	else say "The word is on the tip of your tongue... or it would be, if it hadn't already escaped your mouth! You sense its presence nearby; it might be hiding somewhere in the tower."
+After locketing:
+	if the Ambler Automaton is visible and the Ambler Automaton is unsmushed and the locket is visible, try ambler locketing;
+	if the Basher Automaton is visible and the Basher Automaton is unsmushed and the locket is visible, try basher locketing;
+	if the Collector Automaton is visible and the Collector Automaton is unsmushed and the locket is visible, try collector locketing;
+	if the Depositor Automaton is visible and the Depositor Automaton is unsmushed and the locket is visible, try depositor locketing;
+	if the Exposer Automaton is visible and the Exposer Automaton is unsmushed and the locket is visible, try exposer locketing;
+	if the Fastener Automaton is visible and the Fastener Automaton is unsmushed and the locket is visible, try fastener locketing;
+	if the Gazer Automaton is visible and the locket is visible, try gazer locketing.
+	
+Carry out ambler locketing:
+	if the locket is unnabbed, say "The [bold type]Ambler Automaton[roman type] bumps into the dresser drawers as it tries to stand near the locket.";
+	if the locket is nabbed, say "The [bold type]Ambler Automaton[roman type] bumps against the Collector Automaton as it tries to stand near the locket."
+Carry out basher locketing:
+	say "The [bold type]Basher Automaton[roman type] pummels the locket, denting and warping it.";
+	now the locket is smushed.
+Carry out collector locketing:
+	if the locket is nabbed:
+		say "The [bold type]Collector Automaton[roman type] runs in circles, causing the locket to sway and clack against its wood.";
+	if the locket is unnabbed:
+		say "The [bold type]Collector Automaton[roman type] rushes towards the locket and bends down to scoop it up. After a few unsuccessful attempts, it manages to snag the locket's chain on one of its handle hinges, suspending it near its rim.";
+		now the locket is nabbed.
+Carry out depositor locketing:
+	say "The Depositor Automaton  the locket."
+Carry out exposer locketing:
+	if the locket is open:
+		say "The [bold type]Exposer Automaton[roman type] flips the locket around, but finds nothing more to open.";
+	if the locket is closed:
+		if the APOLOGIZE is sought:
+			say "The [bold type]Exposer Automaton[roman type] flattens the tip of its rope and slides it between the two halves of the locket, popping it open.";
+		if the APOLOGIZE is unsought:
+			say "The [bold type]Exposer Automaton[roman type] flattens the tip of its rope and slides it between the two halves of the locket, popping it open.[line break]Nestled inside the locket is a weak, malnourished word, so shrivelled that you barely recognize it: APOLOGIZE.[line break]Painful memories come flooding back.[line break]You'd torn the verb out of yourself in a fit of petty rage after a particularly awful argument with your dearest friend. You'd thrown it to the wind and told it never to return. It didn't take long for the wind to carry her away, too.[line break]You'd managed to convince yourself that you didn't miss it, that anyway there was no going back. Had it been hidden here all these years, hoping you'd have a change of heart?[line break]The APOLOGIZE falls out of the locket and lays on the floor, unmoving. It looks so brittle that you fear it could disappear any moment. But it slowly starts to crawl across the floor, and laboriously makes its way up the Ambler Automaton's leg. You welcome it back into yourself.";
+			now the APOLOGIZE is sought;
+		now the locket is open.
+Carry out fastener locketing:
+	say "The [bold type]Fastener Automaton[roman type] pinches the locket shut."
+Carry out gazer locketing:
+	say "The [bold type]Gazer Automaton[roman type] beeps and displays a description of the locket:[line break]'A beautiful golden locket, dulled by age and neglect. The word IGNIPTER is engraved on its front in small cursive letters.'";
+	if the locket is closed and the APOLOGIZE is sought, say "It is currently clasped shut.";
+	if the locket is closed and the APOLOGIZE is unsought, say "It is currently clasped shut, and you feel something hiding within in that terrifies you.";
+	if the locket is open, say "It is currently open, revealing a small portrait of a dragon."
+
+[PANTRY]
+
+Pantrying is an action applying to nothing. Understand "pantry" and "pantry door" as pantrying.
+Ambler pantrying is an action applying to nothing.
+Basher pantrying is an action applying to nothing.
+Collector pantrying is an action applying to nothing.
+Depositor pantrying is an action applying to nothing.
+Exposer pantrying is an action applying to nothing.
+Fastener pantrying is an action applying to nothing.
+Gazer pantrying is an action applying to nothing.
+
+Check pantrying:
+	if the pantry is smushed, say "You no longer sense the presence of that noun; it must have fled after its vessel was detroyed." instead.
+Check collector pantrying:   
+	  if the pantry is smushed, say "The [bold type]Collector Automaton[roman type] fails to find a noun to act upon." instead.
+Check exposer pantrying:     
+	  if the pantry is smushed, say "The [bold type]Exposer Automaton[roman type] fails to find a noun to act upon." instead.
+Check fastener pantrying:    
+	  if the pantry is smushed, say "The [bold type]Fastener Automaton[roman type] fails to find a noun to act upon." instead.
+Check gazer pantrying: 
+	  if the pantry is smushed, say "The [bold type]Gazer Automaton[roman type] fails to find a noun to act upon." instead.	
+
+Carry out pantrying: 
+	if the pantry is visible, say "You extend your energy towards the pantry. As your magic touches the noun, its power briefly ebbs outwards, beckoning to all verbs near you.";
+	else say "The word is on the tip of your tongue... or it would be, if it hadn't already escaped your mouth! You sense its presence nearby; it might be hiding somewhere in the tower."
+After pantrying:
+	if the Ambler Automaton is visible and the Ambler Automaton is unsmushed and the pantry is visible, try ambler pantrying;
+	if the Basher Automaton is visible and the Basher Automaton is unsmushed and the pantry is visible, try basher pantrying;
+	if the Collector Automaton is visible and the Collector Automaton is unsmushed and the pantry is visible, try collector pantrying;
+	if the Depositor Automaton is visible and the Depositor Automaton is unsmushed and the pantry is visible, try depositor pantrying;
+	if the Exposer Automaton is visible and the Exposer Automaton is unsmushed and the pantry is visible, try exposer pantrying;
+	if the Fastener Automaton is visible and the Fastener Automaton is unsmushed and the pantry is visible, try fastener pantrying;
+	if the Gazer Automaton is visible and the pantry is visible, try gazer pantrying.
+	
+Carry out ambler pantrying:
+	if the pantry is closed, say "The [bold type]Ambler Automaton[roman type] tries to walk into the pantry door, bumping against it softly.";
+	if the pantry is open, say "The [bold type]Ambler Automaton[roman type] tries to walk into the open pantry, but its legs don't fit."
+Carry out basher pantrying:
+	say "The [bold type]Basher Automaton[roman type] violently swings its hammers at the pantry, collapsing its door and shelves in a messy heap. You feel the noun's power fading away.";
+	now the pantry is smushed.
+Carry out collector pantrying:
+	say "The [bold type]Collector Automaton[roman type] hits its rim against the pantry door, unsuccessfully beckoning it into its bucket."
+Carry out depositor pantrying:
+	say "The Depositor Automaton ."
+Carry out exposer pantrying:
+	if the pantry is open:
+		say "The [bold type]Exposer Automaton[roman type] coils its rope around the pantry door, but finds no way to open it further.";
+	if the pantry is closed:
+		say "The [bold type]Exposer Automaton[roman type] deftly snakes its rope around the pantry door and flicks it open, revealing a varied selection of dried goods.[line break]On the bottom shelf, you spot some dragonsbane [unicode 8211] that should be the perfect deterrent for your invader!";
+		now the pantry is open.
+Carry out fastener pantrying:
+	if the pantry is closed:
+		say "The [bold type]Fastener Automaton[roman type] presses its hand against the closed pantry door, holding it shut.";
+	if the pantry is open:
+		say "The [bold type]Fastener Automaton[roman type] slaps the open pantry door, slamming it shut.";
+		now the pantry is closed.
+Carry out gazer pantrying:
+	say "The [bold type]Gazer Automaton[roman type] beeps and displays a description of the pantry:[line break]'A place to keep your ingredients away from light and heat.'";
+	if the pantry is closed, say "Its door is currently closed.";
+	if the pantry is open, say "Its door is currently open."
+
+[DRAGONSBANE]
+
+Dragonsbaning is an action applying to nothing. Understand "dragonsbane" and "flower" as dragonsbaning.
+Ambler dragonsbaning is an action applying to nothing.
+Basher dragonsbaning is an action applying to nothing.
+Collector dragonsbaning is an action applying to nothing.
+Depositor dragonsbaning is an action applying to nothing.
+Exposer dragonsbaning is an action applying to nothing.
+Fastener dragonsbaning is an action applying to nothing.
+Gazer dragonsbaning is an action applying to nothing.
+
+Check dragonsbaning:
+	if the dragonsbane is smushed, say "You no longer sense the presence of that noun; it must have fled after its vessel was detroyed." instead.
+Carry out dragonsbaning:
+	if the dragonsbane is visible, say "You extend your energy towards the dragonsbane. As your magic touches the noun, its power briefly ebbs outwards, beckoning to all verbs near you.";
+	else say "The word is on the tip of your tongue... or it would be, if it hadn't already escaped your mouth! You sense its presence nearby; it might be hiding somewhere in the tower."
+After dragonsbaning:
+	if the Ambler Automaton is visible and the Ambler Automaton is unsmushed and the dragonsbane is visible, try ambler dragonsbaning;
+	if the Basher Automaton is visible and the Basher Automaton is unsmushed and the dragonsbane is visible, try basher dragonsbaning;
+	if the Collector Automaton is visible and the Collector Automaton is unsmushed and the dragonsbane is visible, try collector dragonsbaning;
+	if the Depositor Automaton is visible and the Depositor Automaton is unsmushed and the dragonsbane is visible, try depositor dragonsbaning;
+	if the Exposer Automaton is visible and the Exposer Automaton is unsmushed and the dragonsbane is visible, try exposer dragonsbaning;
+	if the Fastener Automaton is visible and the Fastener Automaton is unsmushed and the dragonsbane is visible, try fastener dragonsbaning;
+	if the Gazer Automaton is visible and the dragonsbane is visible, try gazer dragonsbaning.
+	
+Carry out ambler dragonsbaning:
+	if the dragonsbane is unnabbed, say "The [bold type]Ambler Automaton[roman type] extends its front legs into the pantry in an attempt to get close to the dragonsbane.";
+	if the dragonsbane is nabbed, say "The [bold type]Ambler Automaton[roman type] nudges the Collector Automaton in an attempt to get close to the dragonsbane."
+Carry out basher dragonsbaning:
+	say "The [bold type]Basher Automaton[roman type] pulverizes the dragonsbane into a waxy powder.";
+	now the dragonsbane is smushed.
+Carry out collector dragonsbaning:
+	if the dragonsbane is nabbed, say "The [bold type]Collector Automaton[roman type] frolics around, full of flowers.";
+	if the dragonsbane is unnabbed:
+		say "The [bold type]Collector Automaton[roman type] shimmies into the pantry and comes back out with a bucketful of potent dragonsbane.[line break]Scattering this outside around the tower should buy you more time!";
+		now the dragonsbane is nabbed.
+Carry out depositor dragonsbaning:
+	say "The Depositor Automaton  the dragonsbane."
+Carry out exposer dragonsbaning:
+	say "The [bold type]Exposer Automaton[roman type] rustles the dragonsbane around, trying in vain to find something to open."
+Carry out fastener dragonsbaning:
+	say "The [bold type]Fastener Automaton[roman type] meticulously pinches each of the dried dragonsbane flowers, making sure that their petals are fully closed. (But not really, because it's impossible for the Fastener Automaton to interact with the dragonsbane)."
+Carry out gazer dragonsbaning:
+	say "The [bold type]Gazer Automaton[roman type] beeps and displays a description of the dragonsbane:[line break]'A large amount of dried dragonsbane flowers. True to its name, dragonsbane is toxic to dragons. It also tastes great in chili!'"
+
+[FRONT DOOR]
+ 
+Dooring is an action applying to nothing. Understand "door" and "front door" as dooring.
+Ambler dooring is an action applying to nothing.
+Basher dooring is an action applying to nothing.
+Collector dooring is an action applying to nothing.
+Depositor dooring is an action applying to nothing.
+Exposer dooring is an action applying to nothing.
+Fastener dooring is an action applying to nothing.
+Gazer dooring is an action applying to nothing.
+
+Check dooring:
+	if the front door is smushed, say "You no longer sense the presence of that noun; it must have fled after its vessel was detroyed." instead.
+Check collector dooring:     
+	if the front door is smushed, say "The [bold type]Collector Automaton[roman type] fails to find a noun to act upon." instead.
+Check exposer dooring: 
+	if the front door is smushed, say "The [bold type]Exposer Automaton[roman type] fails to find a noun to act upon." instead.
+Check fastener dooring:
+	if the front door is smushed, say "The [bold type]Fastener Automaton[roman type] fails to find a noun to act upon." instead.
+Check gazer dooring:   
+	if the front door is smushed, say "The [bold type]Gazer Automaton[roman type] fails to find a noun to act upon." instead.	
+
+Carry out dooring: 
+	if the front door is visible, say "You extend your energy towards the front door. As your magic touches the noun, its power briefly ebbs outwards, beckoning to all verbs near you.";
+	else say "The word is on the tip of your tongue... or it would be, if it hadn't already escaped your mouth! You sense its presence nearby; it might be hiding somewhere in the tower."
+After dooring:
+	if the Ambler Automaton is visible and the front door is visible, try ambler dooring;
+	if the Basher Automaton is visible and the Basher Automaton is unsmushed and the front door is visible, try basher dooring;
+	if the Collector Automaton is visible and the Collector Automaton is unsmushed and the front door is visible, try collector dooring;
+	if the Depositor Automaton is visible and the Depositor Automaton is unsmushed and the front door is visible, try depositor dooring;
+	if the Exposer Automaton is visible and the Exposer Automaton is unsmushed and the front door is visible, try exposer dooring;
+	if the Fastener Automaton is visible and the Fastener Automaton is unsmushed and the front door is visible, try fastener dooring;
+	if the Gazer Automaton is visible and the front door is visible, try gazer dooring.
+	
+Carry out ambler dooring:
+	if the front door is closed, say "The [bold type]Ambler Automaton[roman type] nuzzles up to the front door.";
+	if the front door is open, say "The [bold type]Ambler Automaton[roman type] does a little dance in the doorway."
+Carry out basher dooring:
+	say "The [bold type]Basher Automaton[roman type] smashes through the door and you feel the noun's power fading away. Light pours into the foyer, and you can see the yard.";
+	now the front door is smushed;
+	now the front door is open.
+Carry out collector dooring:
+	say "The [bold type]Collector Automaton[roman type] hops around the door, clattering against it, but fails to collect it."
+Carry out depositor dooring:
+	say "The Depositor Automaton  the front door."
+Carry out exposer dooring:
+	if the front door is open:
+		say "The [bold type]Exposer Automaton[roman type] swings the front door back and forth, but finds that it's already sufficiently open.";
+	if the front door is closed:
+		say "The [bold type]Exposer Automaton[roman type] energetically opens the front door, letting air and sunlight into the room.";
+		now the front door is open.
+Carry out fastener dooring:
+	say "The Fastener Automaton  the front door."
+Carry out gazer dooring:
+	say "The [bold type]Gazer Automaton[roman type] beeps and displays a description of the front door:[line break]'A plain wooden door, imbued with a spell that makes it nigh-impossible to open from the outside.'";
+	if the front door is open, say "It is currently open, and you can see the yard.";
+	if the front door is closed, say "It is currently closed."
+
+[Bedding is an action applying to nothing. Understand "bed" as bedding.
+Ambler bedding is an action applying to nothing.
+Basher bedding is an action applying to nothing.
+Collector bedding is an action applying to nothing.
+Depositor bedding is an action applying to nothing.
+Exposer bedding is an action applying to nothing.
+Fastener bedding is an action applying to nothing.
+Gazer bedding is an action applying to nothing.]
+
+Chapter 3.3 - Automatons
+
+[AUTOMATONS	===	===	===]
+
+[AMBLER]
+
+Ambling is an action applying to nothing. Understand "ambler" and "ambler automaton" as ambling.
+Ambler ambling is an action applying to nothing.
+Basher ambling is an action applying to nothing.
+Collector ambling is an action applying to nothing.
+Depositor ambling is an action applying to nothing.
+Exposer ambling is an action applying to nothing.
+Fastener ambling is an action applying to nothing.
+Gazer ambling is an action applying to nothing.
+
+Check ambling:
+	if the Ambler Automaton is smushed, say "You no longer sense the presence of that noun; it must have fled after its vessel was detroyed." instead.
+Carry out ambling:
+	if the Ambler Automaton is visible, say "You extend your energy towards the Ambler Automaton. As your magic touches the noun, its power briefly ebbs outwards, beckoning to all verbs near you.";
+	else say "The word is on the tip of your tongue... or it would be, if it hadn't already escaped your mouth! You sense its presence nearby; it might be hiding somewhere in the tower."
+After ambling:
+	if the Ambler Automaton is visible, try ambler ambling;
+	if the Basher Automaton is visible and the Basher Automaton is unsmushed and the Ambler Automaton is visible, try basher ambling;
+	if the Collector Automaton is visible and the Collector Automaton is unsmushed and the Ambler Automaton is visible, try collector ambling;
+	if the Depositor Automaton is visible and the Depositor Automaton is unsmushed and the Ambler Automaton is visible, try depositor ambling;
+	if the Exposer Automaton is visible and the Exposer Automaton is unsmushed and the Ambler Automaton is visible, try exposer ambling;
+	if the Fastener Automaton is visible and the Fastener Automaton is unsmushed and the Ambler Automaton is visible, try fastener ambling;
+	if the Gazer Automaton is visible and the Ambler Automaton is visible, try gazer ambling.
+	
+Carry out ambler ambling:
+	if the Ambler Automaton is not hoisted, say "The [bold type]Ambler Automaton[roman type] chases its own behind.";
+	if the Ambler Automaton is hoisted, say "The [bold type]Ambler Automaton[roman type] wiggles in the air, making the Depositor Automaton's claw shake."
+Carry out basher ambling:
+	say "The [bold type]Basher Automaton[roman type] swiftly rolls towards the Ambler Automaton and prepares to batter it. Unfortunately, you've placed yourself right on its victim's back...";
+	now the player is smushed;
+	end the story saying "VIOLENCE ISN'T THE ANSWER TO THIS ONE".
+Carry out collector ambling:
+	if the player is unsmushed, say "The [bold type]Collector Automaton[roman type] tries to scoop up the Ambler Automaton's legs, to no avail."
+Carry out depositor ambling:
+	if the Ambler Automaton is hoisted, say "The [bold type]Depositor Automaton[roman type] keeps the Ambler Automaton in its grip.";
+	if everything is unhoisted:
+		if the Ambler Automaton is unsteeded, say "The [bold type]Depositor Automaton[roman type] picks up the Ambler Automaton.";
+		if the Ambler Automaton is steeded: 
+			say "The [bold type]Depositor Automaton[roman type] grasps the Ambler Automaton, which tilts sideways as it's lifted. You slide off of its back and onto the floor.";
+			now the Ambler Automaton is unsteeded;
+		now the Ambler Automaton is offme;
+		now the Ambler Automaton is offgazer;
+		now the Ambler Automaton is hoisted;
+	if the Gazer Automaton is hoisted:
+		if the Ambler Automaton is unsteeded:
+			say "The [bold type]Depositor Automaton[roman type] places the Gazer Automaton on the Ambler Automaton's gently sloped back, and it slides down to the floor.";
+		if the Ambler Automaton is steeded:
+			say "The [bold type]Depositor Automaton[roman type] balances the Gazer Automaton on the Ambler Automaton's head, but it promptly falls off.";
+		now the Gazer Automaton is unhoisted;
+	if the player is hoisted:
+		say "The [bold type]Depositor Automaton[roman type] drapes your body across the Ambler Automaton's back.";
+		now the Ambler Automaton is steeded;
+		now the player is unhoisted.
+Carry out exposer ambling:
+	if the player is unsmushed, say "The [bold type]Exposer Automaton[roman type] tickles the Ambler Automaton in its fruitless search for something to open."
+Carry out fastener ambling:
+	if the player is unsmushed, say "The [bold type]Fastener Automaton[roman type] slaps the Ambler Automaton, who wobbles slightly from the impact."
+Carry out gazer ambling:
+	if the player is unsmushed and the player is wearing the Gazer Automaton, say "The [bold type]Gazer Automaton[roman type] beeps and displays a description of the Ambler Automaton:[line break]'A smooth and rounded mechanical construct with a segmented body, designed as a model for insect locomotion. You'd attached two large round opals to the front of its head, telling yourself it was for better magical channeling, but in truth it was mostly just because you thought it looked adorable.'";
+	if the player is not wearing the Gazer Automaton, say "The [bold type]Gazer Automaton[roman type] beeps."
+	
+[BASHER]
+
+Bashing is an action applying to nothing. Understand "basher" and "basher automaton" as bashing.
+Ambler bashing is an action applying to nothing.
+Basher bashing is an action applying to nothing.
+Collector bashing is an action applying to nothing. 
+Depositor bashing is an action applying to nothing. 
+Exposer bashing is an action applying to nothing.
+Fastener bashing is an action applying to nothing. 
+Gazer bashing is an action applying to nothing.
+
+Check bashing:
+	if the Basher Automaton is smushed, say "You no longer sense the presence of that noun; it must have fled after its vessel was detroyed." instead.
+Carry out bashing:
+	if the Basher Automaton is visible, say "You extend your energy towards the Basher Automaton. As your magic touches the noun, its power briefly ebbs outwards, beckoning to all verbs near you.";
+	else say "The word is on the tip of your tongue... or it would be, if it hadn't already escaped your mouth! You sense its presence nearby; it might be hiding somewhere in the tower."
+Check collector bashing:
+	  if the Basher Automaton is smushed, say "The [bold type]Collector Automaton[roman type] fails to find a noun to act upon." instead.
+Check exposer bashing:
+	  if the Basher Automaton is smushed, say "The [bold type]Exposer Automaton[roman type] fails to find a noun to act upon." instead.
+Check fastener bashing:
+	  if the Basher Automaton is smushed, say "The [bold type]Fastener Automaton[roman type] fails to find a noun to act upon." instead.
+Check gazer bashing:
+	  if the Basher Automaton is smushed, say "The [bold type]Gazer Automaton[roman type] fails to find a noun to act upon." instead.	
+
+After bashing:
+	if the Ambler Automaton is visible and the Basher Automaton is visible, try ambler bashing;
+	if the Basher Automaton is visible and the Basher Automaton is unsmushed, try basher bashing;
+	if the Collector Automaton is visible and the Collector Automaton is unsmushed and the Basher Automaton is visible, try collector bashing;
+	if the Depositor Automaton is visible and the Depositor Automaton is unsmushed and the Basher Automaton is visible, try depositor bashing;
+	if the Exposer Automaton is visible and the Exposer Automaton is unsmushed and the Basher Automaton is visible and the Basher Automaton is visible, try exposer bashing;
+	if the Fastener Automaton is visible and the Fastener Automaton is unsmushed and the Basher Automaton is visible and the Basher Automaton is visible, try fastener bashing;
+	if the Gazer Automaton is visible and the Basher Automaton is visible, try gazer bashing.
+	
+Carry out ambler bashing:
+	say "The [bold type]Ambler Automaton[roman type] gets as close as possible to the Basher Automaton. Looking up at its giant hammers, you feel nervous."
+Carry out basher bashing:
+	say "Without a hint of hesitation, the [bold type]Basher Automaton[roman type] gives itself two simultaneous blows, crossing its mighty hammers. Its arms fall off (thankfully not on you), and the verb ATTACK floats out of its hollow body. It mischievously bops you on the head before zooming away.[line break]You feel the noun BASHER lose its power.";
+	now the Basher Automaton is smushed.
+Carry out collector bashing:
+	say "The Collector fails to collect the Basher."
+Carry out depositor bashing:
+	say "The [bold type]Depositor Automaton[roman type] picks up the Basher Automaton.";
+	now the Basher Automaton is hoisted.
+Carry out exposer bashing:
+	say "The Exposer finds nothing to open."
+Carry out fastener bashing:
+	say "The Fastener slaps the Basher."
+Carry out gazer bashing:
+	say "The Gazer beeps and describes the Basher."
+	
+[COLLECTOR]
+
+Collecting is an action applying to nothing. Understand "collector" and "collector automaton" as collecting.
+Ambler collecting is an action applying to nothing.
+Basher collecting is an action applying to nothing.
+Collector collecting is an action applying to nothing.
+Depositor collecting is an action applying to nothing.
+Exposer collecting is an action applying to nothing.
+Fastener collecting is an action applying to nothing.
+Gazer collecting is an action applying to nothing.
+
+Check collecting:
+	if the Collector Automaton is smushed, say "You no longer sense the presence of that noun; it must have fled after its vessel was detroyed." instead.
+Carry out collecting: 
+	if the Collector Automaton is visible, say "You extend your energy towards the Collector Automaton. As your magic touches the noun, its power briefly ebbs outwards, beckoning to all verbs near you.";
+	else say "The word is on the tip of your tongue... or it would be, if it hadn't already escaped your mouth! You sense its presence nearby; it might be hiding somewhere in the tower."
+Check collector collecting:  
+	  if the Collector Automaton is smushed, say "The [bold type]Collector Automaton[roman type] fails to find a noun to act upon." instead.
+Check exposer collecting:    
+	  if the Collector Automaton is smushed, say "The [bold type]Exposer Automaton[roman type] fails to find a noun to act upon." instead.
+Check fastener collecting:   
+	  if the Collector Automaton is smushed, say "The [bold type]Fastener Automaton[roman type] fails to find a noun to act upon." instead.
+Check gazer collecting:
+	  if the Collector Automaton is smushed, say "The [bold type]Gazer Automaton[roman type] fails to find a noun to act upon." instead.	
+
+After collecting:
+	if the Ambler Automaton is visible and the Collector Automaton is visible, try ambler collecting;
+	if the Basher Automaton is visible and the Basher Automaton is unsmushed and the Collector Automaton is visible, try basher collecting;
+	if the Collector Automaton is visible and the Collector Automaton is unsmushed, try collector collecting;
+	if the Depositor Automaton is visible and the Depositor Automaton is unsmushed and the Collector Automaton is visible, try depositor collecting;
+	if the Exposer Automaton is visible and the Exposer Automaton is unsmushed and the Collector Automaton is visible, try exposer collecting;
+	if the Fastener Automaton is visible and the Fastener Automaton is unsmushed and the Collector Automaton is visible, try fastener collecting;
+	if the Gazer Automaton is visible and the Collector Automaton is visible, try gazer collecting.
+	
+Carry out ambler collecting:
+	say "The [bold type]Ambler Automaton[roman type] nudges the Collector Automaton."
+Carry out basher collecting:
+	say "The [bold type]Basher Automaton[roman type] swiftly crushes the Collector Automaton in a single swing, sending wooden fragments sliding across the floor. The verb TAKE bursts out, and it bounces around the room playfully before escaping.[line break]You feel the noun COLLECTOR lose its power.";
+	now the Collector Automaton is smushed.
+Carry out collector collecting:
+	say "In a little dance, the [bold type]Collector Automaton[roman type] swings its metal handle around, trying to catch its own bucket."
+Carry out depositor collecting:
+	say "The Depositor Automaton  the Collector Automaton."
+Carry out exposer collecting:
+	say "The [bold type]Exposer Automaton[roman type] examines the Collector Automaton's bucket, but finds that it's already open."
+Carry out fastener collecting:
+	say "The [bold type]Fastener Automaton[roman type] feels around for a way to cover the Collector Automaton's bucket, but only finds a handle to manipulate."
+Carry out gazer collecting:
+	say "The [bold type]Gazer Automaton[roman type] beeps and displays a description of the Collector Automaton:[line break]'A wooden bucket perched on two articulated supports, currently being used as legs.'"
+
+[DEPOSITOR]
+
+Depositing is an action applying to nothing. Understand "depositor" and "depositor automaton" as depositing.
+Ambler depositing is an action applying to nothing.
+Basher depositing is an action applying to nothing.
+Collector depositing is an action applying to nothing.
+Depositor depositing is an action applying to nothing.
+Exposer depositing is an action applying to nothing.
+Fastener depositing is an action applying to nothing.
+Gazer depositing is an action applying to nothing.
+
+Check depositing:
+	if the Depositor Automaton is smushed, say "You no longer sense the presence of that noun; it must have fled after its vessel was detroyed." instead.
+Carry out depositing:
+	if the Depositor Automaton is visible, say "You extend your energy towards the Depositor Automaton. As your magic touches the noun, its power briefly ebbs outwards, beckoning to all verbs near you.";
+	else say "The word is on the tip of your tongue... or it would be, if it hadn't already escaped your mouth! You sense its presence nearby; it might be hiding somewhere in the tower."
+After depositing:
+	if the Ambler Automaton is visible and the Depositor Automaton is visible, try ambler depositing;
+	if the Basher Automaton is visible and the Basher Automaton is unsmushed and the Depositor Automaton is visible, try basher depositing;
+	if the Collector Automaton is visible and the Collector Automaton is unsmushed and the Depositor Automaton is visible, try collector depositing;
+	if the Depositor Automaton is visible, try depositor depositing;
+	if the Exposer Automaton is visible and the Exposer Automaton is unsmushed and the Depositor Automaton is visible, try exposer depositing;
+	if the Fastener Automaton is visible and the Fastener Automaton is unsmushed and the Depositor Automaton is visible, try fastener depositing;
+	if the Gazer Automaton is visible and the Depositor Automaton is visible, try gazer depositing.
+	
+Carry out ambler depositing:
+	if the Ambler Automaton is unhoisted, say "The [bold type]Ambler Automaton[roman type] stands underneath the Depositor Automaton and hops around.";
+	if the Ambler Automaton is hoisted, say "The [bold type]Ambler Automaton[roman type] wiggles and shifts in the Depositor Automaton's grasp."
+Carry out basher depositing:
+	say "The Basher destroys itself.";
+	now the Basher Automaton is smushed.
+Carry out collector depositing:
+	say "The Collector fails to collect the Basher."
+Carry out depositor depositing:
+	if a hoisted thing is visible, say "The [bold type]Depositor Automaton[roman type] swings its claw around, but doesn't manage to deposit its charge on itself.";
+	else say "The [bold type]Depositor Automaton[roman type] claws at itself unsuccessfully."
+Carry out exposer depositing:
+	say "The Exposer finds nothing to open."
+Carry out fastener depositing:
+	say "The Fastener slaps the Basher."
+Carry out gazer depositing:
+	if the player is wearing the Gazer Automaton:
+		say "The [bold type]Gazer Automaton[roman type] beeps and displays a description of the Depositor Automaton:[line break]'A large mechanical crane with soft yet powerful prongs, suspended from the ceiling.'";
+	otherwise:
+		say "The [bold type]Gazer Automaton[roman type] beeps."
+
+[EXPOSER]
+
+Exposing is an action applying to nothing. Understand "exposer" and "exposer automaton" as exposing.
+Ambler exposing is an action applying to nothing.
+Basher exposing is an action applying to nothing.
+Collector exposing is an action applying to nothing.
+Depositor exposing is an action applying to nothing.
+Exposer exposing is an action applying to nothing.
+Fastener exposing is an action applying to nothing.
+Gazer exposing is an action applying to nothing.
+
+Check exposing:
+	if the Exposer Automaton is smushed, say "You no longer sense the presence of that noun; it must have fled after its vessel was detroyed." instead.
+Check collector exposing:    
+	  if the Exposer Automaton is smushed, say "The [bold type]Collector Automaton[roman type] fails to find a noun to act upon." instead.
+Check exposer exposing:
+	  if the Exposer Automaton is smushed, say "The [bold type]Exposer Automaton[roman type] fails to find a noun to act upon." instead.
+Check fastener exposing:     
+	  if the Exposer Automaton is smushed, say "The [bold type]Fastener Automaton[roman type] fails to find a noun to act upon." instead.
+Check gazer exposing:  
+	  if the Exposer Automaton is smushed, say "The [bold type]Gazer Automaton[roman type] fails to find a noun to act upon." instead.	
+
+Carry out exposing:
+	if the Exposer Automaton is visible, say "You extend your energy towards the Exposer Automaton. As your magic touches the noun, its power briefly ebbs outwards, beckoning to all verbs near you.";
+	else say "The word is on the tip of your tongue... or it would be, if it hadn't already escaped your mouth! You sense its presence nearby; it might be hiding somewhere in the tower."
+After exposing:
+	if the Ambler Automaton is visible and the Exposer Automaton is visible, try ambler exposing;
+	if the Basher Automaton is visible and the Basher Automaton is unsmushed and the Exposer Automaton is visible, try basher exposing;
+	if the Collector Automaton is visible and the Collector Automaton is unsmushed and the Exposer Automaton is visible, try collector exposing;
+	if the Depositor Automaton is visible and the Exposer Automaton is visible, try depositor exposing;
+	if the Exposer Automaton is visible and the Exposer Automaton is unsmushed, try exposer exposing;
+	if the Fastener Automaton is visible and the Fastener Automaton is unsmushed and the Exposer Automaton is visible, try fastener exposing;
+	if the Gazer Automaton is visible and the Exposer Automaton is visible, try gazer exposing.
+	
+Carry out ambler exposing:
+	say "The [bold type]Ambler Automaton[roman type] walks back and forth, following the Exposer Automaton's ever-shifting rope."
+Carry out basher exposing:
+	say "The [bold type]Basher Automaton[roman type] pummels the Exposer Automaton's base, cracking it. As the rope turns limp and flops to the floor, the verb OPEN slithers out of the fissure. After briefly coiling around your ankle, it retreats into an inaccessible corner of the room.[line break]You feel the 'noun' EXPOSER lose its power.";
+	now the Exposer Automaton is smushed.
+Carry out collector exposing:
+	if the Exposer Automaton is nabbed:
+		say "The [bold type]Collector Automaton[roman type] chases the end of the Exposer Automaton's rope, trying in vain to get every last bit of it into its bucket.";
+	if the Exposer Automaton is unnabbed:
+		say "The [bold type]Collector Automaton[roman type] struggles to wedge its rim underneath the Exposer Automaton's base, but finally manages to pick it up! The exposed length of rope waves around as the Collector Automaton proudly struts about the room.";
+		now the Exposer Automaton is nabbed.
+Carry out depositor exposing:
+	say "The Depositor Automaton  the Exposer Automaton."
+Carry out exposer exposing:
+	say "The [bold type]Exposer Automaton[roman type] twists itself into knots, but finds nothing to open."
+Carry out fastener exposing:
+	say "The [bold type]Fastener Automaton[roman type] slaps the Exposer Automaton's rope, sending it into an energetic twirl."
+Carry out gazer exposing:
+	say "The [bold type]Gazer Automaton[roman type] beeps and displays a description of the Exposer Automaton:[line break]'An oddly-named automaton [unicode 8211] is [apostrophe]exposer[apostrophe] even a real noun? You do recall reading about new words emerging in these kinds of unusual circumstances. The words[apostrophe] vessel consists of a long rope anchored to a pyramidal base.'"
+
+[FASTENER]
+
+Fastening is an action applying to nothing. Understand "fastener" and "fastener automaton" as fastening.
+Ambler fastening is an action applying to nothing.
+Basher fastening is an action applying to nothing.
+Collector fastening is an action applying to nothing.
+Depositor fastening is an action applying to nothing.
+Exposer fastening is an action applying to nothing.
+Fastener fastening is an action applying to nothing.
+Gazer fastening is an action applying to nothing.
+
+Check fastening:
+	if the Fastener Automaton is smushed, say "You no longer sense the presence of that noun; it must have fled after its vessel was detroyed." instead.
+Check collector fastening:   
+	  if the Fastener Automaton is smushed, say "The [bold type]Collector Automaton[roman type] fails to find a noun to act upon." instead.
+Check exposer fastening:     
+	  if the Fastener Automaton is smushed, say "The [bold type]Exposer Automaton[roman type] fails to find a noun to act upon." instead.
+Check fastener fastening:    
+	  if the Fastener Automaton is smushed, say "The [bold type]Fastener Automaton[roman type] fails to find a noun to act upon." instead.
+Check gazer fastening: 
+	  if the Fastener Automaton is smushed, say "The [bold type]Gazer Automaton[roman type] fails to find a noun to act upon." instead.	
+
+Carry out fastening:
+	if the Fastener Automaton is visible, say "You extend your energy towards the Fastener Automaton. As your magic touches the noun, its power briefly ebbs outwards, beckoning to all verbs near you.";
+	else say "The word is on the tip of your tongue... or it would be, if it hadn't already escaped your mouth! You sense its presence nearby; it might be hiding somewhere in the tower."
+After fastening:
+	if the Ambler Automaton is visible and the Fastener Automaton is visible, try ambler fastening;
+	if the Basher Automaton is visible and the Basher Automaton is unsmushed and the Fastener Automaton is visible, try basher fastening;
+	if the Collector Automaton is visible and the Collector Automaton is unsmushed and the Fastener Automaton is visible, try collector fastening;
+	if the Depositor Automaton is visible and the Fastener Automaton is visible, try depositor fastening;
+	if the Exposer Automaton is visible and the Exposer Automaton is unsmushed and the Fastener Automaton is visible, try exposer fastening;
+	if the Fastener Automaton is visible and the Fastener Automaton is unsmushed, try fastener fastening;
+	if the Gazer Automaton is visible and the Fastener Automaton is visible, try gazer fastening.
+	
+Carry out ambler fastening:
+	say "The [bold type]Ambler Automaton[roman type] walks into the Fastener Automaton's metallic pole. [italic type]Ping![roman type][line break]".
+Carry out basher fastening:
+	say "The [bold type]Basher Automaton[roman type] sweeps its hammer arms towards the Fastener Automaton, bending and denting its metal rod. The verb CLOSE leaps out of the bobbing glove and lands on the floor with a startling smack. After a short pause, it loudly hops away and disappears.[line break]You feel the noun FASTENER lose its power.";
+	now the Fastener Automaton is smushed.
+Carry out collector fastening:
+	say "The [bold type]Collector Automaton[roman type] repeatedly plinks against the Fastener Automaton's arm in its determination to acquire it."
+Carry out depositor fastening:
+	say "The Depositor Automaton  the Fastener Automaton."
+Carry out exposer fastening:
+	say "The [bold type]Exposer Automaton[roman type] snakes its rope between the the Fastener Automaton's fingers in search of something to open."
+Carry out fastener fastening:
+	say "The [bold type]Fastener Automaton[roman type] closes its fingers, making a fist."
+Carry out gazer fastening:
+	say "The [bold type]Gazer Automaton[roman type] beeps and displays a description of the Fastener Automaton:[line break]'A long and multi-jointed metallic arm, embedded into the kitchen floor, that waves around a large artificial hand. You made it out of an old glove, and sometimes use it as an assistant when you're preparing food or potions.'"
+	
+[GAZER]
+
+Gazing is an action applying to nothing. Understand "gazer" and "gazer automaton" as gazing.
+Ambler gazing is an action applying to nothing.
+Basher gazing is an action applying to nothing.
+Collector gazing is an action applying to nothing.
+Depositor gazing is an action applying to nothing.
+Exposer gazing is an action applying to nothing.
+Fastener gazing is an action applying to nothing.
+Gazer gazing is an action applying to nothing.
+
+Check gazing:
+	if the Gazer Automaton is smushed, say "You no longer sense the presence of that noun; it must have fled after its vessel was detroyed." instead.
+Carry out gazing:
+	if the Gazer Automaton is visible, say "You extend your energy towards the Gazer Automaton. As your magic touches the noun, its power briefly ebbs outwards, beckoning to all verbs near you.";
+	else say "The word is on the tip of your tongue... or it would be, if it hadn't already escaped your mouth! You sense its presence nearby; it might be hiding somewhere in the tower."
+After gazing:
+	if the Ambler Automaton is visible and the Gazer Automaton is visible, try ambler gazing;
+	if the Basher Automaton is visible and the Basher Automaton is unsmushed and the Gazer Automaton is visible, try basher gazing;
+	if the Collector Automaton is visible and the Collector Automaton is unsmushed and the Gazer Automaton is visible, try collector gazing;
+	if the Depositor Automaton is visible and the Gazer Automaton is visible, try depositor gazing;
+	if the Exposer Automaton is visible and the Exposer Automaton is unsmushed and the Gazer Automaton is visible, try exposer gazing;
+	if the Fastener Automaton is visible and the Fastener Automaton is unsmushed and the Gazer Automaton is visible, try fastener gazing;
+	if the Gazer Automaton is visible, try gazer gazing.
+	
+Carry out ambler gazing:
+	if the Ambler Automaton is hoisted, say "The [bold type]Ambler Automaton[roman type] wiggles in the air, making the Depositor Automaton's claw shake.";
+	if the Ambler Automaton is unhoisted:	
+		if the the player is not wearing the Gazer Automaton:
+			if the Gazer Automaton is unhoisted and the player is offgazer:
+				say "The [bold type]Ambler Automaton[roman type] stands above the Gazer Automaton, swaying happily from side to side.";
+				now the Ambler Automaton is ongazer;
+			if the Gazer Automaton is unhoisted and the player is ongazer:
+				say "The [bold type]Ambler Automaton[roman type] stands above both you and the Gazer Automaton, swaying happily from side to side.";
+				now the Ambler Automaton is onme;
+			if the Gazer Automaton is hoisted, say "The [bold type]Ambler Automaton[roman type] places itself underneath where the Gazer Automaton is suspended.";
+		if the the player is wearing the Gazer Automaton:
+			if the player is hoisted, say "The [bold type]Ambler Automaton[roman type] places itself underneath where you and the Gazer Automaton are suspended in midair.";
+			if the the Ambler Automaton is steeded, say "The [bold type]Ambler Automaton[roman type] spins around on itself.";
+			if the player is unhoisted and the the Ambler Automaton is unsteeded, say "The [bold type]Ambler Automaton[roman type] walks towards you.";
+Carry out basher gazing:
+	say "The [bold type]Basher Automaton[roman type] swiftly rolls up to you. The last thing you see is its hammer arm swinging towards your face...";
+	now the player is smushed;
+	end the story saying "VIOLENCE ISN'T THE ANSWER TO THIS ONE".
+Carry out collector gazing:
+	if the player is unsmushed, say "The [bold type]Collector Automaton[roman type] tries to collect the Gazer Automaton, but it's firmly attached to your head."
+Carry out depositor gazing:
+	if the Gazer Automaton is hoisted, say "The Gazer Automaton remains in the prongs of the [bold type]Depositor Automaton[roman type].";
+	if everything is unhoisted:
+		if the player is wearing the Gazer Automaton, say "The [bold type]Depositor Automaton[roman type] claws at the Gazer Automaton, but fails to detach it from your head.";
+		if the the player is not wearing the Gazer Automaton:
+			if everything is offgazer:
+				say "The [bold type]Depositor Automaton[roman type] picks up the Gazer Automaton.";
+				now the Gazer Automaton is hoisted;
+			if the player is ongazer, say "The [bold type]Depositor Automaton[roman type] pokes you gently with its claw a few times, but is unable to reach the Gazer Automaton beneath you.";
+			if the Ambler Automaton is ongazer and the player is offgazer:
+				say "The [bold type]Depositor Automaton[roman type] deftly grabs the Gazer Automaton out from under the Ambler Automaton and lifts it into the air.";
+				now the Ambler Automaton is offgazer;
+				now the Gazer Automaton is hoisted;
+	if the Ambler Automaton is hoisted:
+		if the player is not wearing the Gazer Automaton:
+			if the player is offgazer:
+				say "The [bold type]Depositor Automaton[roman type] places the Ambler Automaton on the floor so that it stands over the Gazer Automaton.";
+				now the Ambler Automaton is ongazer;
+			if the player is ongazer:
+				say "The [bold type]Depositor Automaton[roman type] lowers the Ambler Automaton onto the floor, over both you and the Gazer Automaton.";
+				now the Ambler Automaton is onme;
+			now the Ambler Automaton is unhoisted;
+		if the player is wearing the Gazer Automaton:
+			say "The [bold type]Depositor Automaton[roman type] carefully places the Ambler Automaton on the floor so that it stands directly over your head.";
+			now the Ambler Automaton is onme;
+			now the Ambler Automaton is unhoisted;
+	if the player is hoisted:
+		if the player is not wearing the Gazer Automaton:
+			if the Ambler Automaton is offgazer, say "The [bold type]Depositor Automaton[roman type] gently lowers your body on top of the Gazer Automaton.";
+			if the Ambler Automaton is ongazer, say "The [bold type]Depositor Automaton[roman type] snakes your body under the Ambler Automaton and on top of the Gazer Automaton.";
+			now the player is ongazer;
+			now the player is unhoisted;
+		if the player is wearing the Gazer Automaton:
+			say "The [bold type]Depositor Automaton[roman type] turns you upside-down and balances you on your face. You flop to the floor with a painful thud.";
+			now the player is unhoisted.
+Carry out exposer gazing:
+	if the player is unsmushed, say "The [bold type]Exposer Automaton[roman type] tries to open the Gazer Automaton, but only manages to tickle your ears."
+Carry out fastener gazing:
+	if the player is unsmushed, say "The [bold type]Fastener Automaton[roman type] smacks the sides of the Gazer Automaton, trying to fold back its arms. Ouch!"
+Carry out gazer gazing:
+	if the player is not wearing the Gazer Automaton, say "The [bold type]Gazer Automaton[roman type] beeps.";
+	if the player is unsmushed and the player is wearing the Gazer Automaton, say "The [bold type]Gazer Automaton[roman type] beeps and displays a description of itself:[line break]'A pair of eyeglasses with the unique ability to display holographic text and images in the wearer's field of view. You tried to market them to the neighbouring village folk, but they were strangely unpopular.'"
+	
+[Explorer success meing
+Explorer fail meing]
+	
+Part 4 - Rules and Properties
+
+[RULES AND PROPERTIES	===	===	===	===	===	===]
+
+[DESCRIPTIONS	===	===	===]
+
+[ROOM]
+
+Rule for writing a paragraph about the bedroomdoor when the bedroomdoor is in a room:
+	if the player is wearing the Gazer Automaton, say "You can see your [bold type]bedroom[roman type] from here."
+	
+Rule for writing a paragraph about the collapse when the collapse is in a room:
+	if the collapse is unpeeped:
+		say "As the Ambler Automaton makes its way down the stairs, the workshop's entryway collapses behind you! Large pieces of rubble now block the path upstairs.";
+		now the collapse is peeped.
+
+Rule for writing a paragraph about the Ambler Automaton when the Ambler Automaton is in a room (this is the AA paragraph rule):
+	if the Ambler Automaton is hoisted:
+		say "The [bold type]Ambler Automaton[roman type] is hovering above, its legs wiggling.";
+	else:
+		say "The [bold type]Ambler Automaton[roman type] sits in a corner of the room."
+		
+Rule for writing a paragraph about the Basher Automaton when the Basher Automaton is in a room:
+	if the Basher Automaton is unsmushed, say "The [bold type]Basher Automaton[roman type] is idling in the bedroom on its sturdy rubber wheels, its large hammers and even larger frame lending it an imposing presence.";
+[	if the Basher Automaton is smushed, say "The [bold type]Basher Automaton[roman type] is broken."]
+	
+Rule for writing a paragraph about the Collector Automaton when the Collector Automaton is in a room:
+	say "The [bold type]Collector Automaton[roman type] is standing in the foyer, leaning against a wall."
+		
+Rule for writing a paragraph about the Depositor Automaton when the Depositor Automaton is in a room:
+	if the Ambler Automaton is hoisted:
+		say "The [bold type]Depositor Automaton[roman type] is holding the Ambler Automaton.";
+	if the Gazer Automaton is hoisted:
+		say "The [bold type]Depositor Automaton[roman type] is holding the Gazer Automaton.";
+	else:
+		say "The [bold type]Depositor Automaton[roman type] is swaying above you, its claw empty."
+		
+[Rule for writing a paragraph about the Exposer Automaton when the Exposer Automaton is in a room:
+	say "The [bold type]Exposer Automaton[roman type] is on the floor of the kitchen, resting on its small pyramidal base."
+		
+Rule for writing a paragraph about the Fastener Automaton when the Fastener Automaton is in a room:
+	say "The [bold type]Fastener Automaton[roman type] is in the middle of the kitchen, extending up from the floor."]
+		
+Rule for writing a paragraph about the Gazer Automaton when the Gazer Automaton is in a room:
+	if the Gazer Automaton is hoisted:
+		say "The [bold type]Gazer Automaton[roman type] is hovering above you, beeping wildly.";
+	else:
+		say "The [bold type]Gazer Automaton[roman type] beeps on the floor."
+		
+[UNDO]
+
+After undoing an action:
+	say description of the location;
+[]
+	if the Ambler Automaton is visible:
+		if the Ambler Automaton is steeded, say "[line break]The [bold type]Ambler Automaton[roman type] creaks quietly underneath you.";
+		if the Ambler Automaton is unsteeded and the Ambler Automaton is unhoisted, say "[line break]The [bold type]Ambler Automaton[roman type] is standing on the floor.";
+		if the Ambler Automaton is hoisted, say "[line break]The [bold type]Ambler Automaton[roman type] is in the Depositor Automaton's claw, gently swaying back and forth.";
+[]
+	if the Basher Automaton is visible and the Basher Automaton is unsmushed:
+		say "The [bold type]Basher Automaton[roman type] towers over everything else in the room, hammers at the ready.";
+[]
+	if the Collector Automaton is visible and the Collector Automaton is unsmushed:
+		say "The [bold type]Collector Automaton[roman type] impatiently rocks back and forth as it stands around.";
+		if the locket is nabbed and the locket is open, say "Hanging from its side is a small golden [bold type]locket[roman type], in which you can see a portrait of Ignipter.";
+		if the locket is nabbed and the locket is closed, say "Hanging from its side is a small golden [bold type]locket[roman type], clasped shut.";
+		if the dragonsbane is nabbed, say "Inside of the bucket is a considerable amount of dried [bold type]dragonsbane[roman type].";
+		if the Exposer Automaton is nabbed, say "Sticking out from the bucket is a long, lively rope.";
+[]
+	if the Depositor Automaton is visible:
+		if the Ambler Automaton is hoisted:
+			say "The [bold type]Depositor Automaton[roman type] is holding the Ambler Automaton in its grip.";
+		if the Gazer Automaton is hoisted:
+			say "The [bold type]Depositor Automaton[roman type] is holding the Gazer Automaton between the tips of its prongs.";
+		if the player is hoisted:
+			say "The [bold type]Depositor Automaton[roman type]'s claws are firmly clamped around your midsection, keeping you in the air.";
+		if everything is unhoisted:
+			say "The [bold type]Depositor Automaton[roman type] is dangling from the ceiling, its claw empty.";
+[]
+	if the Exposer Automaton is visible and the Exposer Automaton is unsmushed:
+		if the Exposer Automaton is unnabbed, say "The [bold type]Exposer Automaton[roman type] is on the floor, its rope floating up from the pyramidal base.";
+		if the Exposer Automaton is nabbed, say "The [bold type]Exposer Automaton[roman type] is being carried by the Collector Automaton, its rope sticking out from the wooden bucket.";
+[]
+	if the Fastener Automaton is visible and the Fastener Automaton is unsmushed:
+		say "The [bold type]Fastener Automaton[roman type] is in the middle of the room, its metal arm half-folded.";
+[]
+	if the Gazer Automaton is visible:
+		if the player is wearing the Gazer Automaton, say "You can feel the [bold type]Gazer Automaton[roman type]'s strong grip on the sides of your head.";
+		if the player is not wearing the Gazer Automaton and the Gazer Automaton is hoisted, say "The [bold type]Gazer Automaton[roman type] is suspended in the air.";
+		if the player is not wearing the Gazer Automaton and the Gazer Automaton is unhoisted, say "The [bold type]Gazer Automaton[roman type] is lying on the floor.";
+[]
+	if the dresser is visible and the dresser is unsmushed:
+		if the dresser is open, say "Your bedroom [bold type]dresser[roman type]'s drawers are open, displaying things you don't currently need.";
+		if the dresser is closed, say "Your bedroom [bold type]dresser[roman type] is here.";
+[]
+	if the locket is visible:
+		if the locket is unnabbed, say "A small golden [bold type]locket[roman type] lies on the floor, clasped shut.";
+[]
+	if the pantry is visible and the pantry is unsmushed:
+		if the pantry is closed, say "The door to your kitchen [bold type]pantry[roman type] is shut.";
+		if the pantry is open and the dragonsbane is unnabbed, say "The door to your kitchen [bold type]pantry[roman type] is open, and you can see a mass of dried [bold type]dragonsbane[roman type] on its bottom shelf.";
+		if the pantry is open and the dragonsbane is nabbed, say "The door to your kitchen [bold type]pantry[roman type] is open, but there's nothing else in there that you can use right now.";
+[]
+	if the front door is visible and the front door is unsmushed:
+		if the front door is open, say "The [bold type]front door[roman type] to your home is open, and you can see the yard outside of your tower.";
+		if the front door is closed, say "The [bold type]front door[roman type] to your home is currently closed.";
+[]
+	if the player is in the Workshop and the player is wearing the Gazer Automaton, say "At the bottom of a steep staircase, you can see your [bold type]bedroom[roman type].";
+[]
+	if the player is in the Bedroom, say "At the bottom of a steep staircase, you can see your [bold type]kitchen[roman type].";
+[]
+	if the player is in the Kitchen, say "There is a steep staircase leading up to your [bold type]bedroom[roman type], and another leading down to the [bold type]foyer[roman type].";
+[]
+	if the player is in the Foyer, say "At the top of a steep staircase, you can see your [bold type]kitchen[roman type]."
+[]
+
+[WAIT]
+		
+After waiting:
+	say "A moment passes as you let your energy rest.";
+	say description of the location;
+[]
+	if the Ambler Automaton is visible:
+		if the Ambler Automaton is steeded, say "[line break][line break]The [bold type]Ambler Automaton[roman type] creaks quietly underneath you.";
+		if the Ambler Automaton is unsteeded and the Ambler Automaton is unhoisted, say "[line break][line break]The [bold type]Ambler Automaton[roman type] is standing on the floor.";
+		if the Ambler Automaton is hoisted, say "[line break][line break]The [bold type]Ambler Automaton[roman type] is in the Depositor Automaton's claw, gently swaying back and forth.";
+[]
+	if the Basher Automaton is visible and the Basher Automaton is unsmushed:
+		say "[line break]The [bold type]Basher Automaton[roman type] towers over everything else in the room, hammers at the ready.";
+[]
+	if the Collector Automaton is visible and the Collector Automaton is unsmushed:
+		say "[line break]The [bold type]Collector Automaton[roman type] impatiently rocks back and forth as it stands around. ";
+		if the locket is nabbed and the locket is open, say "Hanging from its side is a small golden [bold type]locket[roman type], in which you can see a portrait of Ignipter.";
+		if the locket is nabbed and the locket is closed, say "Hanging from its side is a small golden [bold type]locket[roman type], clasped shut.";
+		if the dragonsbane is nabbed, say "Inside of the bucket is a considerable amount of dried [bold type]dragonsbane[roman type].";
+		if the Exposer Automaton is nabbed, say "Sticking out from the bucket is a long, lively rope.";
+[]
+	if the Depositor Automaton is visible:
+		if the Ambler Automaton is hoisted:
+			say "[line break]The [bold type]Depositor Automaton[roman type] is holding the Ambler Automaton in its grip.";
+		if the Gazer Automaton is hoisted:
+			say "[line break]The [bold type]Depositor Automaton[roman type] is holding the Gazer Automaton between the tips of its prongs.";
+		if the player is hoisted:
+			say "[line break]The [bold type]Depositor Automaton[roman type]'s claws are firmly clamped around your midsection, keeping you in the air.";
+		if everything is unhoisted:
+			say "[line break]The [bold type]Depositor Automaton[roman type] is dangling from the ceiling, its claw empty.";
+[]
+	if the Exposer Automaton is visible and the Exposer Automaton is unsmushed:
+		if the Exposer Automaton is unnabbed, say "[line break]The [bold type]Exposer Automaton[roman type] is on the floor, its rope floating up from the pyramidal base.";
+		if the Exposer Automaton is nabbed, say "[line break]The [bold type]Exposer Automaton[roman type] is being carried by the Collector Automaton, its rope sticking out from the wooden bucket.";
+[]
+	if the Fastener Automaton is visible and the Fastener Automaton is unsmushed:
+		say "[line break]The [bold type]Fastener Automaton[roman type] is in the middle of the room, its metal arm half-folded.";
+[]
+	if the Gazer Automaton is visible:
+		if the player is wearing the Gazer Automaton, say "[line break]You can feel the [bold type]Gazer Automaton[roman type]'s strong grip on the sides of your head.";
+		if the player is not wearing the Gazer Automaton and the Gazer Automaton is hoisted, say "[line break]The [bold type]Gazer Automaton[roman type] is suspended in the air.";
+		if the player is not wearing the Gazer Automaton and the Gazer Automaton is unhoisted, say "[line break]The [bold type]Gazer Automaton[roman type] is lying on the floor.";
+[]
+	if the dresser is visible and the dresser is unsmushed:
+		if the dresser is open, say "[line break]Your bedroom [bold type]dresser[roman type]'s drawers are open, displaying things you don't currently need.";
+		if the dresser is closed, say "[line break]Your bedroom [bold type]dresser[roman type] is here.";
+[]
+	if the locket is visible:
+		if the locket is unnabbed, say "[line break]A small golden [bold type]locket[roman type] lies on the floor, clasped shut.";
+[]
+	if the pantry is visible and the pantry is unsmushed:
+		if the pantry is closed, say "[line break]The door to your kitchen [bold type]pantry[roman type] is shut.";
+		if the pantry is open and the dragonsbane is unnabbed, say "[line break]The door to your kitchen [bold type]pantry[roman type] is open, and you can see a mass of dried [bold type]dragonsbane[roman type] on its bottom shelf.";
+		if the pantry is open and the dragonsbane is nabbed, say "[line break]The door to your kitchen [bold type]pantry[roman type] is open, but there's nothing else in there that you can use right now.";
+[]
+	if the front door is visible and the front door is unsmushed:
+		if the front door is open, say "[line break]The [bold type]front door[roman type] to your home is open, and you can see the outside of your tower.";
+		if the front door is closed, say "[line break]The [bold type]front door[roman type] to your home is currently closed.";
+
+[PROPERTIES]
+
+A thing can be hoisted or unhoisted. A thing is usually unhoisted.
+A thing can be smushed or unsmushed. A thing is usually unsmushed.
+A thing can be nabbed or unnabbed. A thing is usually unnabbed.
+A thing can be peeped or unpeeped. A thing is usually unpeeped.
+A thing can be sought or unsought. A thing is usually unsought.
+A thing can be steeded or unsteeded. A thing is usually unsteeded.
+A thing can be escaped or unescaped. A thing is usually unescaped.
+A thing can be homebodied or wanderlusted. A thing is usually homebodied.
+A thing can be lost, lostish or unlost. A thing is usually unlost.
+A thing can be abouted or unabouted. A thing is usually unabouted.
+
+A thing can be onme or offme. A thing is usually offme.
+A thing can be onambler or offambler. A thing is usually offambler.
+A thing can be ongazer or offgazer. A thing is usually offgazer.
+
+[DISABLED]
+
+Understand the commands “take”, “carry”, “hold”, “get” and “pick” as something new.
+Understand the command “stand” as something new.
+Understand the commands “remove”, “shed”, “doff”, “wear” and “don” as something new.
+Understand the commands “put”, “insert”, “drop”, “throw” and “discard” as something new.
+Understand the commands “give”, “pay”, “offer”, “feed”, “show”, “present” and “display” as something new.
+Understand the commands “go”, “walk” and “run” as something new.
+Understand the commands “inventory”, “i” and “inv” as something new.
+Understand the commands “look”, “l” and “consult” as something new.
+Understand the commands “open”, “unwrap”, “uncover”, “close”, “shut” and “cover” as something new.
+Understand the commands “enter”, “cross”, “sit”, “exit”, “leave” and “out” as something new.
+Understand the commands “examine”, “x”, “watch”, “describe”, “check” and “read” as something new.
+Understand the commands “yes”, “y”, “no” and “sorry” as something new.
+Understand the commands “bother”, “curses”, “drat”, “darn”, “shit”, “fuck” and “damn” as something new.
+Understand the command “search” as something new.
+Understand the command “wave” as something new.
+Understand the commands “set” and “adjust” as something new.
+Understand the commands “pull”, “drag”, “push”, “move”, “shift”, “clear” and “press” as something new.
+Understand the commands “turn”, “rotate”, “twist”, “unscrew”, “screw”, and “switch” as something new.
+Understand the commands “lock” and “unlock” as something new.
+Understand the commands “attack”, “break”, “smash”, “hit”, “fight”, “torture”, “wreck”, “crack”, “destroy”, “murder”, “kill”, “punch” and “thump” as something new.
+Understand the commands “answer”, “say”, “shout”, “speak”, “tell” and “ask” as something new.
+Understand the command “eat” as something new.
+Understand the commands “sleep” and “nap” as something new.
+Understand the command “sing” as something new.
+Understand the commands “climb” and “scale” as something new.
+Understand the commands “buy” and “purchase” as something new.
+Understand the commands “squeeze” and “squash” as something new.
+Understand the commands “take”, “carry”, “hold”, “get” and “pick” as something new.
+Understand the command “swing” as something new.
+Understand the commands “wake”, “awake” and “awaken” as something new.
+Understand the commands “kiss”, “embrace” and “hug” as something new.
+Understand the commands “smell”, “sniff”, “listen”, “hear”, “taste” and “touch” as something new.
+Understand the commands “rub”, “shine”, “polish”, “sweep”, “clean”, “dust”, “wipe”, and “scrub” as something new.
+Understand the commands “tie”, “attach” and “fasten” as something new.
+Understand the commands “burn” and “light” as something new.
+Understand the commands “drink”, “swallow” and “sip” as something new.
+Understand the commands “cut”, “slice”, “prune” and “chop” as something new.
+Understand the commands “jump”, “skip” and “hop” as something new.
+Understand the command “score” as something new.
+Understand the commands “superbrief”, “short”, “verbose”, “long”, “brief” and “normal” as something new.
+Understand the commands “nouns” and “pronouns” as something new.
+Understand the command “notify” as something new.
+Understand the command “disrobe” as something new.
+Understand the command “feel” as something new.
+Understand the commands "go", "up", "down", "u", "d", “north”, "n", "south", "s", "east", "e", "west" and "w" as something new.
+
+[MISC]
+	
+Rule for printing a parser error when the latest parser error is the not a verb I recognise error:
+	if the player is lostish:
+		now the player is lost;
+		say "That's no longer in your vocabulary." instead;
+	if the player is unlost:
+		now the player is lostish;
+		say "That's no longer in your vocabulary." instead;
+	if the player is lost:
+		now the player is unlost;
+		say "That's no longer in your vocabulary.[line break][bracket][bold type]HINT:[roman type] try inputting only a [bold type]noun[roman type]! If you're stuck, you can always take some time to THINK.[close bracket]" instead.
+	
+Instead of going nowhere:
+	say "That's no longer in your vocabulary."
+	
+Every turn when the player's command does not match "credits" and the player's command does not match "credit" and the player's command does not match "think" and the player's command does not match "help" and the player's command does not match "about" and the player's command does not match "dragon" and the player's command does not match "ignipter" and the player's command does not match "apologize" and the player's command does not match "xyzzy":
+	if the player's command does not match "wait" and the player's command does not match "z":
+		if the dresser is visible and the dresser is unsmushed:
+			if the dresser is open, say "[line break]Your bedroom [bold type]dresser[roman type]'s drawers are open, displaying things you don't currently need.";
+			if the dresser is closed, say "[line break]Your bedroom [bold type]dresser[roman type] is here.";
+[]
+		if the locket is visible:
+			if the locket is unnabbed, say "[line break]A small golden [bold type]locket[roman type] lies on the floor, clasped shut.";
+[]
+		if the pantry is visible and the pantry is unsmushed:
+			if the pantry is closed, say "[line break]The door to your kitchen [bold type]pantry[roman type] is shut.";
+			if the pantry is open and the dragonsbane is unnabbed, say "[line break]The door to your kitchen [bold type]pantry[roman type] is open, and you can see a mass of dried [bold type]dragonsbane[roman type] on its bottom shelf.";
+			if the pantry is open and the dragonsbane is nabbed, say "[line break]The door to your kitchen [bold type]pantry[roman type] is open, but there's nothing else in there that you can use right now.";
+[]
+		if the front door is visible and the front door is unsmushed:
+			if the front door is open, say "[line break]The [bold type]front door[roman type] to your home is open, and you can see the yard outside of your tower.";
+			if the front door is closed, say "[line break]The [bold type]front door[roman type] to your home is currently closed.";
+[]	
+	if the player is in the Workshop and the player is wearing the Gazer Automaton, say "At the bottom of a steep staircase, you can see your [bold type]bedroom[roman type].";
+[]
+	if the player is in the Bedroom, say "At the bottom of a steep staircase, you can see your [bold type]kitchen[roman type].";
+[]
+	if the player is in the Kitchen, say "There is a steep staircase leading up to your [bold type]bedroom[roman type], and another leading down to the [bold type]foyer[roman type].";
+[]
+	if the player is in the Foyer:
+		say "At the top of a steep staircase, you can see your [bold type]kitchen[roman type].";
+		if the front door is open, say "You can see your front [bold type]yard[roman type]."
+[]
+
+The you-can-also-see rule is not listed in any rulebook.
