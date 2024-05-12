@@ -6,6 +6,7 @@ Release along with an interpreter. Release along with cover art ("The Ambler Aut
 Include Basic Screen Effects by Emily Short.
 Include Undo Output Control by Nathanael Nerode.
 
+Use DICT_WORD_SIZE of 13.
 
 Part 1 - Scenes
 
@@ -33,6 +34,7 @@ You delicately insert the gem into a small cavity on the front of the ornate met
 	wait for any key;
 	say "[line break]It dawns on you: your Words are gone.[line break]Ever since you bound your life force to the English language, you've relied on them for almost every aspect of life, and now they've been pulled right out of your mouth at the worst possible time by the magical maelstrom![line break]Indeed, to a Word Mage, words are not only tools for communication, they're also the very root of a person's interactions with the outside world; without words, there's no way for you to LIGHT LAMP, EAT PASTA, or even just ENJOY POETRY.[line break][line break]But you don't have the luxury of waiting to get your words back. You'll just have to do without!";
 	wait for any key;
+	now the right hand status line is "[Aline] [Bline] [Cline] [Dline] [Eline] [Fline] [Gline]";
 	continue the action.
 	
 [Every turn while the player is in the Workshop and the player is unpeeped:
@@ -162,8 +164,8 @@ Instead of thinking:
 	otherwise:
 		say "All that's left to do now is head outside and prepare for Ignipter's arrival."
 
-[HINT breaks everything??!?!!?!!?]
-Abouting is an action applying to nothing. Understand "help" and "about" as abouting.
+[***The default 9-letter limit was causing a double-entry error with AUTOMATON and AUTOMATONS, which made those two commands start redirecting to 'abouting' after I added a third 'abouting' synonym!]
+Abouting is an action applying to nothing. Understand "help", "hint" and "about" as abouting.
 Carry out abouting:
 	if the player is abouted:
 		say "Nonverbal Communication uses nouns as its main command type instead of verbs [unicode 8211] for example, [bold type]WORKSHOP[roman type] or ME.[line break]Entering a noun will cause every verb in the vicinity (given physical form by the Automatons) to apply its action to the object containing the noun. Be aware that any broken object will lose its noun and verb, which will put it outside your sphere of influence![line break][line break]Three different endings can be obtained at the end of the game, the first of which has two possible variations. The ending you get depends on your approach (or lack thereof) to dealing with the dragon.[line break]Although most of the default commands have been disabled, these ones can still be used: UNDO, SAVE, RESTORE, RESTART, QUIT, CREDITS, WAIT, TRANSCRIPT, VERIFY, VERSION.";
@@ -183,7 +185,7 @@ Automatoning is an action applying to nothing. Understand "automaton", "automato
 Carry out automatoning:
 	say "Word magic requires precision! Which automaton do you wish to extend your magic to?"
 	
-Backgrounding is an action applying to nothing. Understand "rubble", "carpet", "rug", "shelves", "shelf", "wall", "walls", "floor", "stairs", "stairway", "tapestries", "tapestry", "doorway", "rope", "pole", "hand", "hammer", "hammers", "bucket", "lint", "steps", "base", "arm", "tile", "brick", "bricks", "food", "ingredients", "tower", "bas-relief", "bas-reliefs", "window", "sun", "sunlight" and "entryway" as backgrounding.
+Backgrounding is an action applying to nothing. Understand "rubble", "carpet", "rug", "shelves", "shelf", "wall", "walls", "floor", "stairs", "stairway", "tapestries", "tapestry", "doorway", "rope", "pole", "hand", "hammer", "hammers", "bucket", "lint", "steps", "base", "arm", "tile", "brick", "bricks", "food", "ingredients", "tower", "bas-relief", "bas-reliefs", "window", "sun", "sunlight", "rugs", "nose", "face", "mouth", "eyes", "arm", "leg", "hand", "foot", "body" and "entryway" as backgrounding.
 Carry out backgrounding:
 	say "You don't sense enough power in that word for what you're trying to accomplish; your magic is drawn to the more helpful [bold type]nouns[roman type] in your vicinity."
 	
@@ -654,7 +656,7 @@ Carry out gazer dressering:
 
 [LOCKET]
 
-Locketing is an action applying to nothing. Understand "locket" as locketing.
+Locketing is an action applying to nothing. Understand "locket", "gold locket" and "golden locket" as locketing.
 Ambler locketing is an action applying to nothing.
 Basher locketing is an action applying to nothing.
 Collector locketing is an action applying to nothing.
@@ -698,16 +700,17 @@ Carry out exposer locketing:
 		if the APOLOGIZE is sought:
 			say "The [bold type]Exposer Automaton[roman type] flattens the tip of its rope and slides it between the two halves of the locket, popping it open.";
 		if the APOLOGIZE is unsought:
-			say "The [bold type]Exposer Automaton[roman type] flattens the tip of its rope and slides it between the two halves of the locket, popping it open.[line break]Nestled inside the locket is a weak, malnourished word, so shrivelled that you barely recognize it: APOLOGIZE.[line break]Painful memories come flooding back.[line break]You'd torn the verb out of yourself in a fit of petty rage after a particularly awful argument with your dearest friend. You'd thrown it to the wind and told it never to return. It didn't take long for the wind to carry her away, too.[line break]You'd managed to convince yourself that you didn't miss it, that anyway there was no going back. Had it been hidden here all these years, hoping you'd have a change of heart?[line break]The APOLOGIZE falls out of the locket and lays on the floor, unmoving. It looks so brittle that you fear it could disappear any moment. But it slowly starts to crawl across the floor, and laboriously makes its way up the Ambler Automaton's leg. You welcome it back into yourself.";
+			say "The [bold type]Exposer Automaton[roman type] flattens the tip of its rope and slides it between the two halves of the locket, popping it open.[line break]Nestled inside the locket is a weak, malnourished word, so shrivelled that you barely recognize it: APOLOGIZE.[line break]Painful memories come flooding back.[line break]You'd torn the verb out of yourself in a fit of petty rage after a particularly awful argument with your dearest friend. You'd thrown it to the wind and told it never to return. It didn't take long for the wind to carry her away, too.[line break]You'd managed to convince yourself that you didn't miss it, that anyway there was no going back. Had it been hidden here all these years, hoping you'd have a change of heart?[line break]The APOLOGIZE falls to the floor and lays there for a while, unmoving. It looks so brittle that you fear it could disappear at any moment. But ever so slowly, it begins to crawl across the cold stone, and laboriously makes its way up the Ambler Automaton's leg. You welcome it back into yourself.";
 			now the APOLOGIZE is sought;
 		now the locket is open.
 Carry out fastener locketing:
-	say "The [bold type]Fastener Automaton[roman type] pinches the locket shut."
+	say "The [bold type]Fastener Automaton[roman type] pinches the locket shut.";
+	now the locket is closed.
 Carry out gazer locketing:
 	say "The [bold type]Gazer Automaton[roman type] beeps and displays a description of the locket:[line break]'A beautiful golden locket, dulled by age and neglect. The word IGNIPTER is engraved on its front in small cursive letters.'";
 	if the locket is closed and the APOLOGIZE is sought, say "It is currently clasped shut.";
 	if the locket is closed and the APOLOGIZE is unsought, say "It is currently clasped shut, and you feel something hiding within in that terrifies you.";
-	if the locket is open, say "It is currently open, revealing a small portrait of a dragon."
+	if the locket is open, say "It is currently open, revealing a miniature portrait of a dragon."
 
 [PANTRY]
 
@@ -932,12 +935,12 @@ Carry out depositor ambling:
 		now the Ambler Automaton is hoisted;
 	if the Gazer Automaton is hoisted:
 		if the Ambler Automaton is unsteeded:
-			say "The [bold type]Depositor Automaton[roman type] places the Gazer Automaton on the Ambler Automaton's gently sloped back, and it slides down to the floor.";
+			say "The [bold type]Depositor Automaton[roman type] places the Gazer Automaton on the Ambler Automaton's gently sloped back. It slides down to the floor with a loud clatter.";
 		if the Ambler Automaton is steeded:
 			say "The [bold type]Depositor Automaton[roman type] balances the Gazer Automaton on the Ambler Automaton's head, but it promptly falls off.";
 		now the Gazer Automaton is unhoisted;
 	if the player is hoisted:
-		say "The [bold type]Depositor Automaton[roman type] drapes your body across the Ambler Automaton's back.";
+		say "The [bold type]Depositor Automaton[roman type] drapes your body across the Ambler Automaton's wide back.";
 		now the Ambler Automaton is steeded;
 		now the player is unhoisted.
 Carry out exposer ambling:
@@ -1147,7 +1150,7 @@ Carry out exposer exposing:
 Carry out fastener exposing:
 	say "The [bold type]Fastener Automaton[roman type] slaps the Exposer Automaton's rope, sending it into an energetic twirl."
 Carry out gazer exposing:
-	say "The [bold type]Gazer Automaton[roman type] beeps and displays a description of the Exposer Automaton:[line break]'An oddly-named automaton [unicode 8211] is [apostrophe]exposer[apostrophe] even a real noun? You do recall reading about new words emerging in these kinds of unusual circumstances. The words[apostrophe] vessel consists of a long rope anchored to a pyramidal base.'"
+	say "The [bold type]Gazer Automaton[roman type] beeps and displays a description of the Exposer Automaton:[line break]'An oddly-named automaton [unicode 8211] is [apostrophe]exposer[apostrophe] even a real noun? You do recall reading about new words emerging in these kinds of unusual circumstances. The physical vessel consists of a long rope anchored to a pyramidal base.'"
 
 [FASTENER]
 
@@ -1482,6 +1485,49 @@ A thing can be abouted or unabouted. A thing is usually unabouted.
 A thing can be onme or offme. A thing is usually offme.
 A thing can be onambler or offambler. A thing is usually offambler.
 A thing can be ongazer or offgazer. A thing is usually offgazer.
+
+The Aline is a text that varies.
+The Bline is a text that varies.
+The Cline is a text that varies.
+The Dline is a text that varies.
+The Eline is a text that varies.
+The Fline is a text that varies.
+The Gline is a text that varies.
+
+Every turn when the Ambler Automaton is visible and the Ambler Automaton is unsmushed:
+	now Aline is "A".
+Every turn when the Ambler Automaton is not visible or the Ambler Automaton is smushed:
+	now Aline is " ".
+
+Every turn when the Basher Automaton is visible and the Basher Automaton is unsmushed:
+	now Bline is "B".
+Every turn when the Basher Automaton is not visible or the Basher Automaton is smushed:
+	now Bline is " ".
+	
+Every turn when the Collector Automaton is visible and the Collector Automaton is unsmushed:
+	now Cline is "C";
+Every turn when the Collector Automaton is not visible or the Collector Automaton is smushed:
+	now Cline is " ";
+	
+Every turn when the Depositor Automaton is visible and the Depositor Automaton is unsmushed:
+	now Dline is "D";
+Every turn when the Depositor Automaton is not visible or the Depositor Automaton is smushed:
+	now Dline is " ";
+	
+Every turn when the Exposer Automaton is visible and the Exposer Automaton is unsmushed:
+	now Eline is "E";
+Every turn when the Exposer Automaton is not visible or the Exposer Automaton is smushed:
+	now Eline is " ";
+	
+Every turn when the Fastener Automaton is visible and the Fastener Automaton is unsmushed:
+	now Fline is "F";
+Every turn when the Fastener Automaton is not visible or the Fastener Automaton is smushed:
+	now Fline is " ";
+	
+Every turn when the Gazer Automaton is visible and the Gazer Automaton is unsmushed:
+	now Gline is "G";
+Every turn when the Gazer Automaton is not visible or the Gazer Automaton is smushed:
+	now Gline is " ";
 
 [DISABLED]
 
