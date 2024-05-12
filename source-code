@@ -7,6 +7,7 @@ Include Basic Screen Effects by Emily Short.
 Include Undo Output Control by Nathanael Nerode.
 
 Use DICT_WORD_SIZE of 13.
+[*** This was a very important change! See note near "Abouting"]
 
 Part 1 - Scenes
 
@@ -36,11 +37,14 @@ You delicately insert the gem into a small cavity on the front of the ornate met
 	wait for any key;
 	now the right hand status line is "[Aline] [Bline] [Cline] [Dline] [Eline] [Fline] [Gline]";
 	continue the action.
-	
+
+
+[*** Most of the scenes were not used in the end, as I found other ways to create the "cutscenes" I needed]
+
 [Every turn while the player is in the Workshop and the player is unpeeped:
 	say "Lying on the workshop floor, you think about your predicament. You've thankfully held on to your ability to THINK and WAIT, but you can't seem to find the capacity for any other actions, and you notice that even your senses are greatly dulled.[line break]You're not too worried about your nouns; obedient and predictable, nouns always seek refuge in familiar objects whenever they're orphaned. Even in this sorry state, you should be able to call on their power when they're nearby.[line break]But verbs are independent, fickle things, and although you feel the presence of some of your most beloved verbs within the tower, you doubt you'll be able to compel them directly.[line break][line break]";
 	now the player is peeped.]
-	
+
 [MEMORIES]
 	
 [After opening the locket for the first time:
@@ -87,7 +91,9 @@ With no hesitation and no effort spared, pushing your restricted physical and ma
 		wait for any key;
 		say "[line break]Months later, you've regained almost all of your words and have gone back to your various wizardly projects (you're currently upgrading your six-legged ambulatory machine, whom you've grown very fond of).[line break][line break]In many ways, you've returned to your old routines. But on your nightstand, a book on healthy communication lies atop [italic type]Draconic for Dummies[roman type], and you've purged all dragonsbane from your property.[line break]Whenever you spot a familiar dragon in your crystal ball, heading straight for your tower, you're now filled with a warm happiness.";
 		end the story finally saying "ENDING 3 OUT OF 3: FORGIVENESS".
-	
+
+[*** The following is a remnant from when I planned to let the player take one extra turn once outside]
+
 [Every turn while the player is in the Yard and the dragon is unpeeped:
 		say "You are outdoors. [line break]";
 		wait for any key;
@@ -112,6 +118,7 @@ The Depositor Automaton is an object in the Workshop. The description is "The [b
 The Gazer Automaton is a wearable object in the Workshop. The description is "The [bold type]Gazer Automaton[roman type] beeps on the floor."
 The bedroomdoor is an object in the Workshop.
 
+[*** The Bedroom being programmed as "below the Workshop" is from an earlier version. I'd neglected to remove that line of code, because I thought I had disabled all the standard directions anyway. But it turns out that these commands exist on a special layer not affected by the method I was using, so it was still possible to teleport between the bedroom and the workshop with UP and DOWN!]
 
 The Bedroom is a room. "You are in your [bold type]bedroom[roman type]."
 [The Bedroom is below the Workshop.]
@@ -149,7 +156,8 @@ Carry out apologizing:
 Xyzzying is an action applying to nothing. Understand "xyzzy", "plugh", "plover" and "fee fie foe foo" as xyzzying.
 Carry out xyzzying:
 	say "You can't channel the magic words without your word magic!"
-	
+
+[*** I'd like to eventually create a better think/help/about system, if there's interest for it]
 
 Instead of thinking:
 	if the player is unsought:
@@ -164,7 +172,7 @@ Instead of thinking:
 	otherwise:
 		say "All that's left to do now is head outside and prepare for Ignipter's arrival."
 
-[***The default 9-letter limit was causing a double-entry error with AUTOMATON and AUTOMATONS, which made those two commands start redirecting to 'abouting' after I added a third 'abouting' synonym!]
+
 Abouting is an action applying to nothing. Understand "help", "hint" and "about" as abouting.
 Carry out abouting:
 	if the player is abouted:
@@ -180,15 +188,21 @@ Carry out dragoning:
 Crediting is an action applying to nothing. Understand "credits" and "credit" as crediting.
 Carry out crediting:
 	say "Written and developed in Inform 7 by Allyson Gray (cover art drawn in FireAlpaca).[line break]Beta testing and many other kinds of support provided by the wonderful Alex Parker.[line break]Special thanks to the IF community for being an invaluable source of knowledge, motivation and innovation.[line break]Extensions used: Basic Screen Effects by Emily Short and Undo Output Control by Nathanael Nerode."
+
+[*** The default 9-letter limit was causing a double-entry error with AUTOMATON and AUTOMATONS, which made those two commands start redirecting to 'abouting' after I added a third 'abouting' synonym!]
 	
 Automatoning is an action applying to nothing. Understand "automaton", "automatons" and "automata" as automatoning.
 Carry out automatoning:
 	say "Word magic requires precision! Which automaton do you wish to extend your magic to?"
-	
+
+[*** There are definitely some potential words missing from 'backgrounding', but I wasn't sure how many more to add...]
+
 Backgrounding is an action applying to nothing. Understand "rubble", "carpet", "rug", "shelves", "shelf", "wall", "walls", "floor", "stairs", "stairway", "tapestries", "tapestry", "doorway", "rope", "pole", "hand", "hammer", "hammers", "bucket", "lint", "steps", "base", "arm", "tile", "brick", "bricks", "food", "ingredients", "tower", "bas-relief", "bas-reliefs", "window", "sun", "sunlight", "rugs", "nose", "face", "mouth", "eyes", "arm", "leg", "hand", "foot", "body" and "entryway" as backgrounding.
 Carry out backgrounding:
 	say "You don't sense enough power in that word for what you're trying to accomplish; your magic is drawn to the more helpful [bold type]nouns[roman type] in your vicinity."
-	
+
+[*** This next part is meant to give custom responses to attempting to use the verbs trapped in the automatons like ATTACK or TAKE, but I haven't managed to put it all together yet. I was mistakenly attempting to redefine these existing verbs, but I'm realizing that I'll have to use another method like "instead".]
+
 [A-ing is an action applying to nothing. Understand "GO" as A-ing.
 Carry out A-ing:
 	say "You can't go!"
@@ -210,10 +224,9 @@ Chapter 3.1 - Rooms
 
 [ROOMS	====	====	====]
 
-[FUN FACT: a bad copy/paste job in the first release of the game led to a line like this being in every room transition:
-	if the dragonsbane is nabbed, now the locket is in the Bedroom;
-this led to the locket wandering around the tower on its own, even when the dresser was still unopened :)
-Big thanks to Tabitha for bringing the issue to my attention!]
+[*** A bad copy/paste job in the first release of the game led to a line like this being in every room transition:
+	if the dragonsbane is nabbed, now the locket is in the [room];
+The correct line (with 'locket' instead of 'dragonsbane') was supposed to allow the Collector to carry the locket around the tower. But the error led to the locket instead wandering the tower on its own, following the player, even when the dresser was still unopened... :)]
 
 [WORKSHOP]
 
@@ -1290,7 +1303,9 @@ Carry out fastener gazing:
 Carry out gazer gazing:
 	if the player is not wearing the Gazer Automaton, say "The [bold type]Gazer Automaton[roman type] beeps.";
 	if the player is unsmushed and the player is wearing the Gazer Automaton, say "The [bold type]Gazer Automaton[roman type] beeps and displays a description of itself:[line break]'A pair of eyeglasses with the unique ability to display holographic text and images in the wearer's field of view. You tried to market them to the neighbouring village folk, but they were strangely unpopular.'"
-	
+
+[*** These two lines are from before I knew how to to structure the automaton actions]
+
 [Explorer success meing
 Explorer fail meing]
 	
@@ -1470,6 +1485,8 @@ After waiting:
 		if the front door is closed, say "[line break]The [bold type]front door[roman type] to your home is currently closed.";
 
 [PROPERTIES]
+
+[*** I had too much fun naming these properties!]
 
 A thing can be hoisted or unhoisted. A thing is usually unhoisted.
 A thing can be smushed or unsmushed. A thing is usually unsmushed.
