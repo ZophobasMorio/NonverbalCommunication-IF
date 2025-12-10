@@ -79,17 +79,17 @@ Every turn while the player is in the Yard:
 		say "The Ambler Automaton steps out into the yard. Your eyes widen as you're immediately confronted with the sight of Ignipter, who was waiting outside your tower![line break]";
 		if the Basher Automaton is escaped, say "The Basher Automaton is not much help, waging war on your flowers and eviscerating bushes.";
 		if the Collector Automaton is escaped, say "Meanwhile, the Collector Automaton frolics about, collecting all the dirt it possibly can.";
-		say "[line break][line break]You can only watch helplessly as the beast lowers her head towards you, baring fangs almost as long as you are tall. Finding yourself completely defenseless, you feel a primal energy surge deep within you. A gnawing feeling of emptiness is suddenly replaced by the biggest adrenaline rush you've ever felt – the verb FLEE has galloped back to you, drawn in by your instincts and panic!
+		say "[line break][line break]You can only watch helplessly as the beast lowers her head towards you, baring fangs almost as long as you are tall. Finding yourself completely defenseless, you feel a primal energy surge deep within you. The gnawing emptiness is suddenly replaced by the strongest adrenaline rush you've ever felt – the verb FLEE has galloped back to you, drawn in by your instincts and your panic!
 With no hesitation and no effort spared, pushing your restricted physical and magical capacities to their limits, you abandon your tower and escape towards a nearby cave. Ignipter roars something in Draconic that you don't understand (presumably a threat) as you scramble away.";
 		wait for any key;
 		say "[line break]Months later, you've regained most of your words and come out of hiding. You haven't seen or heard from Ignipter since the incident, which is a relief. But you still live in fear of another invasion, and you often find yourself wondering what could have been...";
 		end the story finally saying "ENDING 2 OUT OF 3: FLIGHT";
 []
 	if the APOLOGIZE is sought and the dragonsbane is unsought:
-		say "The Ambler Automaton steps out into the yard. Your eyes widen as you're immediately confronted with the sight of Ignipter, who was waiting outside your tower![line break][line break]You anxiously stare as she lowers her head towards you, her maw slightly ajar, revealing fangs almost as long as you are tall. But your gaze slowly shifts to her eyes, and you're surprised to find them filled with apprehension and sadness. Is this what you were so afraid of?[line break]The weight of the wasted decades, of the guilt, of the frustration at the futility of it all, is almost too much to bear. This time, you don't let yourself sink.
+		say "The Ambler Automaton steps out into the yard. Your eyes widen as you're immediately confronted with the sight of Ignipter, who was waiting outside your tower![line break][line break]You anxiously stare as she lowers her head towards you, her maw slightly ajar, revealing fangs almost as long as you are tall. But when your gaze shifts to her eyes, you're surprised to find them filled with apprehension and sadness. Is [italic type]this[roman type] what you were so afraid of?[line break]The weight of the wasted decades, of the guilt, of the frustration at the futility of it all, is almost too much to bear. This time, you don't let yourself sink.
 [line break][line break]'I'm sorry.'[line break][line break]She roars mournfully.[line break][line break]'I'm so sorry...'";
 		wait for any key;
-		say "[line break]Months later, you've regained almost all of your words and have gone back to your various wizardly projects (you're currently upgrading your six-legged ambulatory machine, whom you've grown very fond of).[line break][line break]In many ways, you've returned to your old routines. But on your nightstand, a book on healthy communication lies atop [italic type]Draconic for Dummies[roman type], and you've purged all dragonsbane from your property.[line break]Whenever you spot a familiar dragon in your crystal ball, heading straight for your tower, you're now filled with a warm happiness.";
+		say "[line break]Months later, you've regained almost all of your words and have gone back to your various wizardly projects (you're currently upgrading your six-legged ambulatory machine, whom you've grown very fond of).[line break][line break]In many ways, you've returned to your old routines. But on your nightstand, a tome on healthy communication lies atop [italic type]Draconic for Dummies[roman type], and you've purged all dragonsbane from your property.[line break]Whenever you spot a familiar dragon in your crystal ball, heading straight for your tower, you're only filled with warmth...";
 		end the story finally saying "ENDING 3 OUT OF 3: FORGIVENESS".
 
 [*** The following is a remnant from when I planned to let the player take one extra turn once outside]
@@ -111,11 +111,11 @@ Part 2 - Rooms
 	
 [ROOMS	===	===	===	===	===	===]
 	
-The Workshop is a room. Description of the Workshop is "[if unvisited]Lying on the workshop floor among the remains of your artefacts, you think about your predicament. You've thankfully held on to your ability to THINK and WAIT, but you can't seem to find the capacity for any other actions, and you notice that even your senses are greatly dulled.[line break][line break]You're not too worried about your nouns; obedient and predictable, nouns always seek refuge in familiar objects whenever they're orphaned. Even in this sorry state, you should be able to call on their power when they're nearby.[line break]But verbs are independent, fickle things, and although you feel the presence of some of your most beloved verbs within the tower, you doubt you'll be able to compel them directly.[line break][line break]Still, you need to find a way to survive this! You extend outwards what little magical power you still have, identifying nearby [bold type]nouns[roman type] that might prove helpful. What if you tried addressing them directly?[otherwise]You are in the [bold type]workshop[roman type].[line break]".
+The Workshop is a room. Description of the Workshop is "[if unvisited]Lying on the workshop floor among the remains of your artefacts, you reflect on your predicament. You've thankfully held on to your ability to THINK and WAIT, but you can't seem to find the capacity for any other actions, and you notice that even your senses are greatly dulled.[line break][line break]You're not too worried about your nouns; obedient and predictable, nouns always seek refuge in familiar objects whenever they're orphaned. Even in this sorry state, you should be able to call on their power when they're nearby.[line break]But verbs are independent, fickle things, and although you feel the presence of some of your most beloved verbs within the tower, you doubt you'll be able to compel them directly.[line break][line break]Nonetheless, you have to find a way to survive this! You extend outwards what little magical power you still have, identifying nearby [bold type]nouns[roman type] which might prove helpful. What if you tried addressing them directly?[otherwise]You are in the [bold type]workshop[roman type].[line break]".
 The player is in the Workshop. [The player wears a long robe.]
 The Ambler Automaton is an object in the Workshop. The description is "The [bold type]Ambler Automaton[roman type] sits in a corner, inactive."
 The Depositor Automaton is an object in the Workshop. The description is "The [bold type]Depositor Automaton[roman type] is swaying above you."
-The Gazer Automaton is a wearable object in the Workshop. The description is "The [bold type]Gazer Automaton[roman type] beeps on the floor."
+The Gazer Automaton is a wearable object in the Workshop. The description is "The [bold type]Gazer Automaton[roman type] is lying on the floor."
 The bedroomdoor is an object in the Workshop.
 
 [*** The Bedroom being programmed as "below the Workshop" is from an earlier version. I'd neglected to remove that line of code, because I thought I had disabled all the standard directions anyway. But it turns out that these commands exist on a special layer not affected by the method I was using, so it was still possible to teleport between the bedroom and the workshop with UP and DOWN!]
@@ -166,7 +166,7 @@ Instead of thinking:
 	otherwise if the player is not wearing the Gazer Automaton:
 		say "You struggle to detect anything beyond your immediate surroundings. If only you could acquire something to bolster your senses...";
 	otherwise if the Ambler Automaton is unsteeded:
-		say "You can't walk or even crawl in your current state; you have to figure out a way to get around.";
+		say "You can't walk or even crawl in your current state; you need to figure out a way to get around.";
 	otherwise if the APOLOGIZE is unsought and the dragonsbane is unnabbed:
 		say "There must be something you can find around the tower that will help you ward off the dragon.";
 	otherwise:
@@ -176,7 +176,7 @@ Instead of thinking:
 Abouting is an action applying to nothing. Understand "help", "hint" and "about" as abouting.
 Carry out abouting:
 	if the player is abouted:
-		say "Nonverbal Communication uses nouns as its main command type instead of verbs [unicode 8211] for example, [bold type]WORKSHOP[roman type] or ME.[line break]Entering a noun will cause every verb in the vicinity (given physical form by the Automatons) to apply its action to the object containing the noun. Be aware that any broken object will lose its noun and verb, which will put it outside your sphere of influence![line break][line break]Three different endings can be obtained at the end of the game, the first of which has two possible variations. The ending you get depends on your approach (or lack thereof) to dealing with the dragon.[line break]Although most of the default commands have been disabled, these ones can still be used: UNDO, SAVE, RESTORE, RESTART, QUIT, CREDITS, WAIT, TRANSCRIPT, VERIFY, VERSION.";
+		say "Nonverbal Communication uses nouns as its main command type instead of verbs [unicode 8211] for example, [bold type]WORKSHOP[roman type] or ME.[line break]Inputting a noun will cause every verb in the vicinity (given physical form by the Automatons) to apply its action to the object containing the noun. Be aware that any broken object will lose its noun and/or verb, which will put it outside your sphere of influence![line break][line break]There are three different endings to the game, the first of which has two possible variations. The ending you see depends on your approach (or lack thereof) to dealing with the dragon.[line break]Although most of the default commands have been disabled, the following can still be used: UNDO, SAVE, RESTORE, RESTART, QUIT, CREDITS, WAIT, TRANSCRIPT, VERIFY, VERSION.";
 	if the player is unabouted:
 		say "[bracket][bold type]NOTE TO PLAYER:[roman type] this section may contain spoilers. Type ABOUT or HELP again to receive instructions and information about the game, or try THINK for less revealing contextual clues.[close bracket]";
 		now the player is abouted.
@@ -187,7 +187,7 @@ Carry out dragoning:
 	
 Crediting is an action applying to nothing. Understand "credits" and "credit" as crediting.
 Carry out crediting:
-	say "Written and developed in Inform 7 by Allyson Gray (cover art drawn in FireAlpaca).[line break]Beta testing and many other kinds of support provided by the wonderful Alex Parker.[line break]Special thanks to the IF community for being an invaluable source of knowledge, motivation and innovation.[line break]Extensions used: Basic Screen Effects by Emily Short and Undo Output Control by Nathanael Nerode."
+	say "Written and developed in Inform 7 by Allyson Gray (cover art drawn in FireAlpaca).[line break]Beta testing and other invaluable support provided by the wonderful Alex Parker.[line break]Special thanks to the IF community for being an endless source of knowledge, motivation and innovation.[line break]Extensions used: Basic Screen Effects by Emily Short and Undo Output Control by Nathanael Nerode."
 
 [*** The default 9-letter limit was causing a double-entry error with AUTOMATON and AUTOMATONS, which made those two commands start redirecting to 'abouting' after I added a third 'abouting' synonym!]
 	
@@ -278,8 +278,8 @@ Carry out exposer workshopping:
 Carry out fastener workshopping:
 	say "This line should never appear!"
 Carry out gazer workshopping:
-	if the player is not wearing the Gazer Automaton, say "The [bold type]Gazer Automaton[roman type] beeps.";
-	if the player is wearing the Gazer Automaton, say "The [bold type]Gazer Automaton[roman type] beeps and displays a description of the workshop:[line break]'The workshop is where you do all of your most important work. It's currently in complete disarray, and even the stone entryway seems to be crumbling.'"
+	if the player is not wearing the Gazer Automaton, say "The [bold type]Gazer Automaton[roman type] chirps.";
+	if the player is wearing the Gazer Automaton, say "The [bold type]Gazer Automaton[roman type] chirps and displays a description of the workshop:[line break]'The workshop is where you do all of your most important work. It's currently in complete disarray, and even the stone entryway seems to be crumbling.'"
 	
 [BEDROOM]
 	
@@ -344,7 +344,7 @@ Carry out collector bedrooming:
 		say "The [bold type]Collector Automaton[roman type] jumps around, trying to collect the bedroom itself." instead;
 	now the Collector Automaton is homebodied.
 Carry out depositor bedrooming:
-	if everything is unhoisted, say "The [bold type]Depositor Automaton[roman type] swings its claw towards the doorway and makes grabbing gestures towards the bedroom.";
+	if everything is unhoisted, say "The [bold type]Depositor Automaton[roman type] swings its claw towards the doorway and makes grabbing gestures at the bedroom.";
 	if the Ambler Automaton is hoisted:
 		say "The [bold type]Depositor Automaton[roman type] strains its claw towards the bedroom, but is unable to reach that far. The Ambler Automaton sways gently while still suspended in the air.";
 	if the Gazer Automaton is hoisted:
@@ -356,8 +356,8 @@ Carry out exposer bedrooming:
 Carry out fastener bedrooming:
 	say "The Fastener slaps the bedroom."
 Carry out gazer bedrooming:
-	if the player is in the Bedroom, say "The [bold type]Gazer Automaton[roman type] beeps and displays a description of the bedroom:[line break]'Your bedroom is made cozier by an assortment of rugs and tapestries that cover the cold stone surfaces. Thankfully, everything seems mostly intact despite the destruction that happened upstairs.'";
-	otherwise say "The [bold type]Gazer Automaton[roman type] beeps and displays a description of the bedroom:[line break]'You can just barely see your bedroom through the doorway. If you can find a way to get down the steps, you'll be able to start searching for a dragon deterrent.'"
+	if the player is in the Bedroom, say "The [bold type]Gazer Automaton[roman type] chirps and displays a description of the bedroom:[line break]'Your bedroom is made cozier by an assortment of rugs and tapestries that cover the cold stone surfaces. Thankfully, everything seems mostly intact despite the destruction that happened upstairs.'";
+	otherwise say "The [bold type]Gazer Automaton[roman type] chirps and displays a description of the bedroom:[line break]'You can just barely see your bedroom through the doorway. If you can find a way to get down the steps, you'll be able to start searching for a dragon deterrent.'"
 	
 [KITCHEN]
 	
@@ -429,7 +429,7 @@ Carry out exposer kitchening:
 Carry out fastener kitchening:
 	say "The [bold type]Fastener Automaton[roman type] taps the kitchen's bricks and tiles, making sure there are no openings to be found."
 Carry out gazer kitchening:
-	say "The [bold type]Gazer Automaton[roman type] beeps and displays a description of the kitchen:[line break]'Well-stocked with food as well as a variety of magical ingredients.'";
+	say "The [bold type]Gazer Automaton[roman type] chirps and displays a description of the kitchen:[line break]'Well-stocked with food as well as a variety of magical ingredients.'";
 	now the Exposer Automaton is peeped;
 	now the Fastener Automaton is peeped.
 	
@@ -493,7 +493,7 @@ Carry out exposer foyering:
 Carry out fastener foyering:
 	say "The Fastener Automaton  the foyer."
 Carry out gazer foyering:
-	say "The [bold type]Gazer Automaton[roman type] beeps and displays a description of the foyer:[line break]'A room designed to be beautiful and inviting. If you ever had guests, they'd surely appreciate the warm welcome.'"
+	say "The [bold type]Gazer Automaton[roman type] chirps and displays a description of the foyer:[line break]'A room designed to be beautiful and inviting. If you ever had guests, they'd surely appreciate the warm welcome.'"
 	
 [YARD]
 	
@@ -541,7 +541,7 @@ Carry out exposer yarding:
 Carry out fastener yarding:
 	say "The Fastener Automaton  the yard."
 Carry out gazer yarding:
-	say "The Gazer Automaton beeps.[line break]'The foyer is a fancy-looking room.'"]
+	say "The Gazer Automaton chirps.[line break]'The foyer is a fancy-looking room.'"]
 	
 Chapter 3.2 - Player and Objects
 
@@ -607,8 +607,8 @@ Carry out exposer meing:
 Carry out fastener meing:
 	if the player is unsmushed and the Fastener Automaton is unsmushed, say "The [bold type]Fastener Automaton[roman type] pats your eyes closed. You reopen them."
 Carry out gazer meing:
-	if the player is unsmushed and the player is wearing the Gazer Automaton, say "The [bold type]Gazer Automaton[roman type] beeps and displays a description of you:[line break]'A powerful Word Mage who also dabbles in potion-making and enchanted mechanics. Currently in a rather pitiful state.'";
-	if the player is unsmushed and the player is not wearing the Gazer Automaton, say "The [bold type]Gazer Automaton[roman type] beeps."
+	if the player is unsmushed and the player is wearing the Gazer Automaton, say "The [bold type]Gazer Automaton[roman type] chirps and displays a description of you:[line break]'A powerful Word Mage who also dabbles in potion-making and enchanted mechanics. Currently in a rather pitiful state.'";
+	if the player is unsmushed and the player is not wearing the Gazer Automaton, say "The [bold type]Gazer Automaton[roman type] chirps."
 	
 [DRESSER]
 
@@ -663,7 +663,7 @@ Carry out exposer dressering:
 Carry out fastener dressering:
 	say "The Fastener Automaton  the dresser."
 Carry out gazer dressering:
-	say "The [bold type]Gazer Automaton[roman type] beeps and displays a description of the dresser:[line break]'A wooden dresser adorned with intricate carvings.'";
+	say "The [bold type]Gazer Automaton[roman type] chirps and displays a description of the dresser:[line break]'A wooden dresser adorned with intricate carvings.'";
 	if the dresser is closed, say "Its drawers are currently closed.";
 	if the dresser is open, say "Its drawers are currently open, filled with things that you have no use for right now."
 
@@ -713,16 +713,16 @@ Carry out exposer locketing:
 		if the APOLOGIZE is sought:
 			say "The [bold type]Exposer Automaton[roman type] flattens the tip of its rope and slides it between the two halves of the locket, popping it open.";
 		if the APOLOGIZE is unsought:
-			say "The [bold type]Exposer Automaton[roman type] flattens the tip of its rope and slides it between the two halves of the locket, popping it open.[line break]Nestled inside the locket is a weak, malnourished word, so shrivelled that you barely recognize it: APOLOGIZE.[line break]Painful memories come flooding back.[line break]You'd torn the verb out of yourself in a fit of petty rage after a particularly awful argument with your dearest friend. You'd thrown it to the wind and told it never to return. It didn't take long for the wind to carry her away, too.[line break]You'd managed to convince yourself that you didn't miss it, that anyway there was no going back. Had it been hidden here all these years, hoping you'd have a change of heart?[line break]The APOLOGIZE falls to the floor and lays there for a while, unmoving. It looks so brittle that you fear it could disappear at any moment. But ever so slowly, it begins to crawl across the cold stone, and laboriously makes its way up the Ambler Automaton's leg. You welcome it back into yourself.";
+			say "The [bold type]Exposer Automaton[roman type] flattens the tip of its rope and slides it between the two halves of the locket, popping it open.[line break]Nestled inside the locket is a weak, malnourished word, so shrivelled that you barely recognize it: APOLOGIZE.[line break]Painful memories come flooding back.[line break]You'd torn the verb out of yourself in a fit of petty rage after a particularly awful argument with your dearest friend. You'd thrown it to the wind and told it never to return. It didn't take long for the wind to carry her away, too.[line break]You'd managed to convince yourself that you didn't miss it, that anyway there was no going back. Has it been hidden here all these years, hoping you'd have a change of heart?[line break]The APOLOGIZE falls to the floor and lays there for a while, unmoving. It looks so brittle that you fear it could disappear at any moment. But ever so slowly, it begins to crawl across the cold stone, and laboriously makes its way up the Ambler Automaton's leg. You welcome it back into yourself.";
 			now the APOLOGIZE is sought;
 		now the locket is open.
 Carry out fastener locketing:
 	say "The [bold type]Fastener Automaton[roman type] pinches the locket shut.";
 	now the locket is closed.
 Carry out gazer locketing:
-	say "The [bold type]Gazer Automaton[roman type] beeps and displays a description of the locket:[line break]'A beautiful golden locket, dulled by age and neglect. The word IGNIPTER is engraved on its front in small cursive letters.'";
+	say "The [bold type]Gazer Automaton[roman type] chirps and displays a description of the locket:[line break]'A beautiful golden locket, dulled by age and neglect. The word IGNIPTER is engraved on its front in small cursive letters.'";
 	if the locket is closed and the APOLOGIZE is sought, say "It is currently clasped shut.";
-	if the locket is closed and the APOLOGIZE is unsought, say "It is currently clasped shut, and you feel something hiding within in that terrifies you.";
+	if the locket is closed and the APOLOGIZE is unsought, say "It is currently clasped shut, and you feel something hiding within it that terrifies you.";
 	if the locket is open, say "It is currently open, revealing a miniature portrait of a dragon."
 
 [PANTRY]
@@ -761,7 +761,7 @@ After pantrying:
 	
 Carry out ambler pantrying:
 	if the pantry is closed, say "The [bold type]Ambler Automaton[roman type] tries to walk into the pantry door, bumping against it softly.";
-	if the pantry is open, say "The [bold type]Ambler Automaton[roman type] tries to walk into the open pantry, but its legs don't fit."
+	if the pantry is open, say "The [bold type]Ambler Automaton[roman type] tries to walk into the open pantry, but its legs won't fit."
 Carry out basher pantrying:
 	say "The [bold type]Basher Automaton[roman type] violently swings its hammers at the pantry, collapsing its door and shelves in a messy heap. You feel the noun's power fading away.";
 	now the pantry is smushed.
@@ -773,7 +773,8 @@ Carry out exposer pantrying:
 	if the pantry is open:
 		say "The [bold type]Exposer Automaton[roman type] coils its rope around the pantry door, but finds no way to open it further.";
 	if the pantry is closed:
-		say "The [bold type]Exposer Automaton[roman type] deftly snakes its rope around the pantry door and flicks it open, revealing a varied selection of dried goods.[line break]On the bottom shelf, you spot some dragonsbane [unicode 8211] that should be the perfect deterrent for your invader!";
+		say "The [bold type]Exposer Automaton[roman type] deftly snakes its rope around the pantry door and flicks it open, revealing a varied selection of dried goods.[line break]On the bottom shelf, you spot some [if the Fastener Automaton is smushed][bold type][end if]dragonsbane[roman type] [unicode 8211] that should be the perfect deterrent for your invader!";
+		now the dragonsbane is peeped;
 		now the pantry is open.
 Carry out fastener pantrying:
 	if the pantry is closed:
@@ -782,7 +783,7 @@ Carry out fastener pantrying:
 		say "The [bold type]Fastener Automaton[roman type] slaps the open pantry door, slamming it shut.";
 		now the pantry is closed.
 Carry out gazer pantrying:
-	say "The [bold type]Gazer Automaton[roman type] beeps and displays a description of the pantry:[line break]'A place to keep your ingredients away from light and heat.'";
+	say "The [bold type]Gazer Automaton[roman type] chirps and displays a description of the pantry:[line break]'A place to keep your ingredients away from light and heat.'";
 	if the pantry is closed, say "Its door is currently closed.";
 	if the pantry is open, say "Its door is currently open."
 
@@ -812,13 +813,13 @@ After dragonsbaning:
 	if the Gazer Automaton is visible and the dragonsbane is visible, try gazer dragonsbaning.
 	
 Carry out ambler dragonsbaning:
-	if the dragonsbane is unnabbed, say "The [bold type]Ambler Automaton[roman type] extends its front legs into the pantry in an attempt to get close to the dragonsbane.";
+	if the dragonsbane is unnabbed, say "The [bold type]Ambler Automaton[roman type] extends its front legs into the pantry in a futile attempt to get close to the dragonsbane.";
 	if the dragonsbane is nabbed, say "The [bold type]Ambler Automaton[roman type] nudges the Collector Automaton in an attempt to get close to the dragonsbane."
 Carry out basher dragonsbaning:
 	say "The [bold type]Basher Automaton[roman type] pulverizes the dragonsbane into a waxy powder.";
 	now the dragonsbane is smushed.
 Carry out collector dragonsbaning:
-	if the dragonsbane is nabbed, say "The [bold type]Collector Automaton[roman type] frolics around, full of flowers.";
+	if the dragonsbane is nabbed, say "The [bold type]Collector Automaton[roman type] frolics around, already full of flowers.";
 	if the dragonsbane is unnabbed:
 		say "The [bold type]Collector Automaton[roman type] shimmies into the pantry and comes back out with a bucketful of potent dragonsbane.[line break]Scattering this outside around the tower should buy you more time!";
 		now the dragonsbane is nabbed.
@@ -829,7 +830,7 @@ Carry out exposer dragonsbaning:
 Carry out fastener dragonsbaning:
 	say "The [bold type]Fastener Automaton[roman type] meticulously pinches each of the dried dragonsbane flowers, making sure that their petals are fully closed. (But not really, because it's impossible for the Fastener Automaton to interact with the dragonsbane)."
 Carry out gazer dragonsbaning:
-	say "The [bold type]Gazer Automaton[roman type] beeps and displays a description of the dragonsbane:[line break]'A large amount of dried dragonsbane flowers. True to its name, dragonsbane is toxic to dragons. It also tastes great in chili!'"
+	say "The [bold type]Gazer Automaton[roman type] chirps and displays a description of the dragonsbane:[line break]'A large amount of dried dragonsbane flowers. True to its name, dragonsbane is toxic to dragons. It also tastes great in chili!'"
 
 [FRONT DOOR]
  
@@ -869,7 +870,7 @@ Carry out ambler dooring:
 	if the front door is closed, say "The [bold type]Ambler Automaton[roman type] nuzzles up to the front door.";
 	if the front door is open, say "The [bold type]Ambler Automaton[roman type] does a little dance in the doorway."
 Carry out basher dooring:
-	say "The [bold type]Basher Automaton[roman type] smashes through the door and you feel the noun's power fading away. Light pours into the foyer, and you can see the yard.";
+	say "The [bold type]Basher Automaton[roman type] smashes through the door and you feel the noun's power fading away. Light pours into the foyer; you can now see the [bold type]yard[roman type].";
 	now the front door is smushed;
 	now the front door is open.
 Carry out collector dooring:
@@ -885,7 +886,7 @@ Carry out exposer dooring:
 Carry out fastener dooring:
 	say "The Fastener Automaton  the front door."
 Carry out gazer dooring:
-	say "The [bold type]Gazer Automaton[roman type] beeps and displays a description of the front door:[line break]'A plain wooden door, imbued with a spell that makes it nigh-impossible to open from the outside.'";
+	say "The [bold type]Gazer Automaton[roman type] chirps and displays a description of the front door:[line break]'A plain wooden door, imbued with a spell that makes it nigh-impossible to open from the outside.'";
 	if the front door is open, say "It is currently open, and you can see the yard.";
 	if the front door is closed, say "It is currently closed."
 
@@ -961,8 +962,8 @@ Carry out exposer ambling:
 Carry out fastener ambling:
 	if the player is unsmushed, say "The [bold type]Fastener Automaton[roman type] slaps the Ambler Automaton, who wobbles slightly from the impact."
 Carry out gazer ambling:
-	if the player is unsmushed and the player is wearing the Gazer Automaton, say "The [bold type]Gazer Automaton[roman type] beeps and displays a description of the Ambler Automaton:[line break]'A smooth and rounded mechanical construct with a segmented body, designed as a model for insect locomotion. You'd attached two large round opals to the front of its head, telling yourself it was for better magical channeling, but in truth it was mostly just because you thought it looked adorable.'";
-	if the player is not wearing the Gazer Automaton, say "The [bold type]Gazer Automaton[roman type] beeps."
+	if the player is unsmushed and the player is wearing the Gazer Automaton, say "The [bold type]Gazer Automaton[roman type] chirps and displays a description of the Ambler Automaton:[line break]'A smooth and rounded mechanical construct with a segmented body, designed as a model for insect locomotion. You'd attached two large round opals to the front of its head, telling yourself it was for better magical channeling, but in truth it was mainly because it looked adorable.'";
+	if the player is not wearing the Gazer Automaton, say "The [bold type]Gazer Automaton[roman type] chirps."
 	
 [BASHER]
 
@@ -1013,7 +1014,7 @@ Carry out exposer bashing:
 Carry out fastener bashing:
 	say "The Fastener slaps the Basher."
 Carry out gazer bashing:
-	say "The Gazer beeps and describes the Basher."
+	say "The Gazer chirps and describes the Basher."
 	
 [COLLECTOR]
 
@@ -1063,7 +1064,7 @@ Carry out exposer collecting:
 Carry out fastener collecting:
 	say "The [bold type]Fastener Automaton[roman type] feels around for a way to cover the Collector Automaton's bucket, but only finds a handle to manipulate."
 Carry out gazer collecting:
-	say "The [bold type]Gazer Automaton[roman type] beeps and displays a description of the Collector Automaton:[line break]'A wooden bucket perched on two articulated supports, currently being used as legs.'"
+	say "The [bold type]Gazer Automaton[roman type] chirps and displays a description of the Collector Automaton:[line break]'A wooden bucket perched on two articulated supports, currently being used as legs.'"
 
 [DEPOSITOR]
 
@@ -1107,9 +1108,9 @@ Carry out fastener depositing:
 	say "The Fastener slaps the Basher."
 Carry out gazer depositing:
 	if the player is wearing the Gazer Automaton:
-		say "The [bold type]Gazer Automaton[roman type] beeps and displays a description of the Depositor Automaton:[line break]'A large mechanical crane with soft yet powerful prongs, suspended from the ceiling.'";
+		say "The [bold type]Gazer Automaton[roman type] chirps and displays a description of the Depositor Automaton:[line break]'A large mechanical crane with soft yet powerful prongs, suspended from the ceiling.'";
 	otherwise:
-		say "The [bold type]Gazer Automaton[roman type] beeps."
+		say "The [bold type]Gazer Automaton[roman type] chirps."
 
 [EXPOSER]
 
@@ -1154,7 +1155,7 @@ Carry out collector exposing:
 	if the Exposer Automaton is nabbed:
 		say "The [bold type]Collector Automaton[roman type] chases the end of the Exposer Automaton's rope, trying in vain to get every last bit of it into its bucket.";
 	if the Exposer Automaton is unnabbed:
-		say "The [bold type]Collector Automaton[roman type] struggles to wedge its rim underneath the Exposer Automaton's base, but finally manages to pick it up! The exposed length of rope waves around as the Collector Automaton proudly struts about the room.";
+		say "The [bold type]Collector Automaton[roman type] struggles to wedge its rim underneath the Exposer Automaton's base, but finally manages to pick it up! The exposed length of rope waves about as the Collector Automaton proudly struts around the room.";
 		now the Exposer Automaton is nabbed.
 Carry out depositor exposing:
 	say "The Depositor Automaton  the Exposer Automaton."
@@ -1163,7 +1164,7 @@ Carry out exposer exposing:
 Carry out fastener exposing:
 	say "The [bold type]Fastener Automaton[roman type] slaps the Exposer Automaton's rope, sending it into an energetic twirl."
 Carry out gazer exposing:
-	say "The [bold type]Gazer Automaton[roman type] beeps and displays a description of the Exposer Automaton:[line break]'An oddly-named automaton [unicode 8211] is [apostrophe]exposer[apostrophe] even a real noun? You do recall reading about new words emerging in these kinds of unusual circumstances. The physical vessel consists of a long rope anchored to a pyramidal base.'"
+	say "The [bold type]Gazer Automaton[roman type] chirps and displays a description of the Exposer Automaton:[line break]'An oddly-named automaton [unicode 8211] is [apostrophe]exposer[apostrophe] even a real noun? You do recall reading about new words emerging in these kinds of unusual circumstances. The physical vessel consists of a long rope anchored to a pyramidal base.'"
 
 [FASTENER]
 
@@ -1213,7 +1214,7 @@ Carry out exposer fastening:
 Carry out fastener fastening:
 	say "The [bold type]Fastener Automaton[roman type] closes its fingers, making a fist."
 Carry out gazer fastening:
-	say "The [bold type]Gazer Automaton[roman type] beeps and displays a description of the Fastener Automaton:[line break]'A long and multi-jointed metallic arm, embedded into the kitchen floor, that waves around a large artificial hand. You made it out of an old glove, and sometimes use it as an assistant when you're preparing food or potions.'"
+	say "The [bold type]Gazer Automaton[roman type] chirps and displays a description of the Fastener Automaton:[line break]'A long and multi-jointed metallic arm, embedded into the kitchen floor, that waves around a large artificial hand. You made it out of an old glove, and sometimes use it as an assistant when you're preparing food or potions.'"
 	
 [GAZER]
 
@@ -1301,8 +1302,8 @@ Carry out exposer gazing:
 Carry out fastener gazing:
 	if the player is unsmushed, say "The [bold type]Fastener Automaton[roman type] smacks the sides of the Gazer Automaton, trying to fold back its arms. Ouch!"
 Carry out gazer gazing:
-	if the player is not wearing the Gazer Automaton, say "The [bold type]Gazer Automaton[roman type] beeps.";
-	if the player is unsmushed and the player is wearing the Gazer Automaton, say "The [bold type]Gazer Automaton[roman type] beeps and displays a description of itself:[line break]'A pair of eyeglasses with the unique ability to display holographic text and images in the wearer's field of view. You tried to market them to the neighbouring village folk, but they were strangely unpopular.'"
+	if the player is not wearing the Gazer Automaton, say "The [bold type]Gazer Automaton[roman type] chirps.";
+	if the player is unsmushed and the player is wearing the Gazer Automaton, say "The [bold type]Gazer Automaton[roman type] chirps and displays a description of itself:[line break]'A pair of eyeglasses with the unique ability to display holographic text and images in the wearer's field of view. You tried to market them to the neighbouring village folk, but they were strangely unpopular.'"
 
 [*** These two lines are from before I knew how to to structure the automaton actions]
 
@@ -1354,9 +1355,9 @@ Rule for writing a paragraph about the Fastener Automaton when the Fastener Auto
 		
 Rule for writing a paragraph about the Gazer Automaton when the Gazer Automaton is in a room:
 	if the Gazer Automaton is hoisted:
-		say "The [bold type]Gazer Automaton[roman type] is hovering above you, beeping wildly.";
+		say "The [bold type]Gazer Automaton[roman type] is swaying above you, chirping wildly.";
 	else:
-		say "The [bold type]Gazer Automaton[roman type] beeps on the floor."
+		say "The [bold type]Gazer Automaton[roman type] lies on the floor."
 		
 [UNDO]
 
@@ -1375,7 +1376,7 @@ After undoing an action:
 		say "The [bold type]Collector Automaton[roman type] impatiently rocks back and forth as it stands around.";
 		if the locket is nabbed and the locket is open, say "Hanging from its side is a small golden [bold type]locket[roman type], in which you can see a portrait of Ignipter.";
 		if the locket is nabbed and the locket is closed, say "Hanging from its side is a small golden [bold type]locket[roman type], clasped shut.";
-		if the dragonsbane is nabbed, say "Inside of the bucket is a considerable amount of dried [bold type]dragonsbane[roman type].";
+		if the dragonsbane is nabbed, say "Inside the bucket is a considerable amount of dried [bold type]dragonsbane[roman type].";
 		if the Exposer Automaton is nabbed, say "Sticking out from the bucket is a long, lively rope.";
 []
 	if the Depositor Automaton is visible:
