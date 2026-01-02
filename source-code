@@ -1,5 +1,6 @@
 "Nonverbal Communication" by Allyson Gray
-The release number is 2.
+
+The release number is 3.
 
 Release along with an interpreter. Release along with cover art ("The Ambler Automaton wearing a starry wizard's hat").
 
@@ -35,6 +36,9 @@ You delicately insert the gem into a small cavity on the front of the ornate met
 	wait for any key;
 	say "[line break]It dawns on you: your Words are gone.[line break]Ever since you bound your life force to the English language, you've relied on them for almost every aspect of life, and now they've been pulled right out of your mouth at the worst possible time by the magical maelstrom![line break]Indeed, to a Word Mage, words are not only tools for communication, they're also the very root of a person's interactions with the outside world; without words, there's no way for you to LIGHT LAMP, EAT PASTA, or even just ENJOY POETRY.[line break][line break]But you don't have the luxury of waiting to get your words back. You'll just have to do without!";
 	wait for any key;
+	now the Aline is "A ";
+	now the Dline is " D ";
+	now the Gline is " G";
 	now the right hand status line is "[Aline] [Bline] [Cline] [Dline] [Eline] [Fline] [Gline]";
 	continue the action.
 
@@ -89,7 +93,7 @@ With no hesitation and no effort spared, pushing your restricted physical and ma
 		say "The Ambler Automaton steps out into the yard. Your eyes widen as you're immediately confronted with the sight of Ignipter, who was waiting outside your tower![line break][line break]You anxiously stare as she lowers her head towards you, her maw slightly ajar, revealing fangs almost as long as you are tall. But when your gaze shifts to her eyes, you're surprised to find them filled with apprehension and sadness. Is [italic type]this[roman type] what you were so afraid of?[line break]The weight of the wasted decades, of the guilt, of the frustration at the futility of it all, is almost too much to bear. This time, you don't let yourself sink.
 [line break][line break]'I'm sorry.'[line break][line break]She roars mournfully.[line break][line break]'I'm so sorry...'";
 		wait for any key;
-		say "[line break]Months later, you've regained almost all of your words and have gone back to your various wizardly projects (you're currently upgrading your six-legged ambulatory machine, whom you've grown very fond of).[line break][line break]In many ways, you've returned to your old routines. But on your nightstand, a tome on healthy communication lies atop [italic type]Draconic for Dummies[roman type], and you've purged all dragonsbane from your property.[line break]Whenever you spot a familiar dragon in your crystal ball, heading straight for your tower, you're only filled with warmth...";
+		say "[line break]Months later, you've regained almost all of your words and have gone back to your various wizardly projects (you're currently upgrading your six-legged ambulatory machine, whom you've grown very fond of).[line break][line break]In many ways, you've returned to your old routines. But on your nightstand, a tome on healthy communication lies atop a Draconic-to-English dictionary, and you've purged all dragonsbane from your property.[line break]Whenever you spot a familiar dragon in your crystal ball, heading straight for your tower, you're only filled with warmth...";
 		end the story finally saying "ENDING 3 OUT OF 3: FORGIVENESS".
 
 [*** The following is a remnant from when I planned to let the player take one extra turn once outside]
@@ -111,7 +115,7 @@ Part 2 - Rooms
 	
 [ROOMS	===	===	===	===	===	===]
 	
-The Workshop is a room. Description of the Workshop is "[if unvisited]Lying on the workshop floor among the remains of your artefacts, you reflect on your predicament. You've thankfully held on to your ability to THINK and WAIT, but you can't seem to find the capacity for any other actions, and you notice that even your senses are greatly dulled.[line break][line break]You're not too worried about your nouns; obedient and predictable, nouns always seek refuge in familiar objects whenever they're orphaned. Even in this sorry state, you should be able to call on their power when they're nearby.[line break]But verbs are independent, fickle things, and although you feel the presence of some of your most beloved verbs within the tower, you doubt you'll be able to compel them directly.[line break][line break]Nonetheless, you have to find a way to survive this! You extend outwards what little magical power you still have, identifying nearby [bold type]nouns[roman type] which might prove helpful. What if you tried addressing them directly?[otherwise]You are in the [bold type]workshop[roman type].[line break]".
+The Workshop is a room. Description of the Workshop is "[if unvisited]Lying on the workshop floor among the remains of your artefacts, you reflect on your predicament. You've thankfully held on to your ability to THINK and WAIT, but you can't seem to find the capacity for any other actions, and you notice that even your senses are greatly dulled.[line break][line break]You're not too worried about your nouns; obedient and predictable, nouns always seek refuge in familiar objects whenever they're orphaned. Even in this sorry state, you should be able to call on their power when they're nearby.[line break]But verbs are independent, fickle things, and although you feel the presence of some of your most beloved verbs within the tower, you doubt you'll be able to compel them directly.[line break][line break]Nonetheless, there must be a way to survive this! You extend outwards what little magical power you still have, identifying nearby [bold type]nouns[roman type] which might prove helpful. What if you tried addressing them directly?[otherwise]You are in the [bold type]workshop[roman type].[line break]".
 The player is in the Workshop. [The player wears a long robe.]
 The Ambler Automaton is an object in the Workshop. The description is "The [bold type]Ambler Automaton[roman type] sits in a corner, inactive."
 The Depositor Automaton is an object in the Workshop. The description is "The [bold type]Depositor Automaton[roman type] is swaying above you."
@@ -187,7 +191,7 @@ Carry out dragoning:
 	
 Crediting is an action applying to nothing. Understand "credits" and "credit" as crediting.
 Carry out crediting:
-	say "Written and developed in Inform 7 by Allyson Gray (cover art drawn in FireAlpaca).[line break]Beta testing and other invaluable support provided by the wonderful Alex Parker.[line break]Special thanks to the IF community for being an endless source of knowledge, motivation and innovation.[line break]Extensions used: Basic Screen Effects by Emily Short and Undo Output Control by Nathanael Nerode."
+	say "Written and developed by Allyson Gray using the fantastic Inform 7 language (cover art drawn in FireAlpaca).[line break]Beta testing and other invaluable support provided by my wonderful partner Alex Parker.[line break]Special thanks to the IF community for being an endless source of knowledge, motivation and innovation![line break]Extensions used: Basic Screen Effects by Emily Short and Undo Output Control by Nathanael Nerode."
 
 [*** The default 9-letter limit was causing a double-entry error with AUTOMATON and AUTOMATONS, which made those two commands start redirecting to 'abouting' after I added a third 'abouting' synonym!]
 	
@@ -335,7 +339,7 @@ Carry out basher bedrooming:
 	now the Basher Automaton is homebodied.
 Carry out collector bedrooming:
 	if the Collector Automaton is wanderlusted and the Collector Automaton is not in the Bedroom:
-		say "The [bold type]Collector Automaton[roman type] skips into the bedroom and enthusiastically jumps around, trying to collect the room itself.";
+		say "The [bold type]Collector Automaton[roman type] skips through the doorway and enthusiastically jumps around, doing its best to collect the bedroom itself.";
 		now the Collector Automaton is in the Bedroom;
 		if the Exposer Automaton is nabbed, now the Exposer Automaton is in the Bedroom;
 		if the locket is nabbed, now the locket is in the Bedroom;
@@ -356,7 +360,7 @@ Carry out exposer bedrooming:
 Carry out fastener bedrooming:
 	say "The Fastener slaps the bedroom."
 Carry out gazer bedrooming:
-	if the player is in the Bedroom, say "The [bold type]Gazer Automaton[roman type] chirps and displays a description of the bedroom:[line break]'Your bedroom is made cozier by an assortment of rugs and tapestries that cover the cold stone surfaces. Thankfully, everything seems mostly intact despite the destruction that happened upstairs.'";
+	if the player is in the Bedroom, say "The [bold type]Gazer Automaton[roman type] chirps and displays a description of the bedroom:[line break]'Your bedroom is made cozier by an assortment of rugs and tapestries covering the cold stone surfaces. Thankfully, everything seems mostly intact despite the destruction that happened upstairs.'";
 	otherwise say "The [bold type]Gazer Automaton[roman type] chirps and displays a description of the bedroom:[line break]'You can just barely see your bedroom through the doorway. If you can find a way to get down the steps, you'll be able to start searching for a dragon deterrent.'"
 	
 [KITCHEN]
@@ -392,7 +396,7 @@ After kitchening:
 		say "The [bold type]Exposer Automaton[roman type] is still on the kitchen floor, its rope waving softly in the air.";
 		now the Exposer Automaton is unpeeped;]
 	if the Exposer Automaton is peeped and the Exposer Automaton is unsmushed, try exposer kitchening;
-	if the Exposer Automaton is unpeeped and the Exposer Automaton is unsmushed and the Exposer Automaton is unnabbed, say "The [bold type]Exposer Automaton[roman type] is on the floor of the kitchen, resting on its small pyramidal base.[line break]";
+	if the Exposer Automaton is unpeeped and the Exposer Automaton is unsmushed and the Exposer Automaton is unnabbed, say "The [bold type]Exposer Automaton[roman type] sits on the kitchen floor, resting on its small pyramidal base.[line break]";
 	if the Fastener Automaton is peeped and the Fastener Automaton is unsmushed, try fastener kitchening;
 	if the Fastener Automaton is unpeeped and the Fastener Automaton is unsmushed, say "[line break]The [bold type]Fastener Automaton[roman type] is in the middle of the kitchen, its metal arm extending up from the floor.";
 	if the Gazer Automaton is visible, try gazer kitchening.
@@ -588,7 +592,7 @@ Carry out depositor meing:
 		if the Ambler Automaton is offme:
 			say "The [bold type]Depositor Automaton[roman type] picks you up in its claw, hoisting you above the room.";
 		if the Ambler Automaton is onme:
-			say "The [bold type]Depositor Automaton[roman type] carefully nabs you out from under the Ambler Automaton, and hoists you above the room.";
+			say "The [bold type]Depositor Automaton[roman type] carefully nabs you out from underneath the Ambler Automaton, and hoists you above the room.";
 			now the Ambler Automaton is offme;
 		now the player is offgazer;
 		now the Ambler Automaton is unsteeded;
