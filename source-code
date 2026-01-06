@@ -40,6 +40,7 @@ You delicately insert the gem into a small cavity on the front of the ornate met
 	now the Dline is " D ";
 	now the Gline is " G";
 	now the right hand status line is "[Aline] [Bline] [Cline] [Dline] [Eline] [Fline] [Gline]";
+	now the command prompt is "[bold type]> [roman type]";
 	continue the action.
 
 
@@ -67,6 +68,8 @@ continue the action.]
 [ENDINGS	===	===	===]
 
 Every turn while the player is in the Yard:
+	now the left hand status line is " ";
+	now the right hand status line is " ";
 	if the dragonsbane is sought and the APOLOGIZE is unsought:
 		say "The Ambler Automaton steps out into the yard. Your eyes widen as you're immediately confronted with the sight of Ignipter, who was waiting outside your tower![line break][line break]Luckily, the Collector Automaton runs out after you. The mere proximity to dragonsbane is enough to make the dragon sputter and cough up plumes of sickly black smoke. She leaps away in a panic and flies unsteadily towards the horizon.[line break][line break]";
 		wait for any key;
@@ -356,7 +359,7 @@ Carry out depositor bedrooming:
 	if the player is hoisted:
 		say "The [bold type]Depositor Automaton[roman type] strains its claw towards the bedroom but is unable to reach that far. Swaying in its grasp, you feel slightly nauseous."
 Carry out exposer bedrooming:
-	say "The [bold type]Exposer Automaton[roman type] moves its rope across the bedroom floor in a sweeping motion."
+	say "The [bold type]Exposer Automaton[roman type] moves its rope in a sweeping motion across the bedroom rugs."
 Carry out fastener bedrooming:
 	say "The Fastener slaps the bedroom."
 Carry out gazer bedrooming:
@@ -418,7 +421,7 @@ Carry out basher kitchening:
 	now the Basher Automaton is homebodied.
 Carry out collector kitchening:
 	if the Collector Automaton is wanderlusted and the Collector Automaton is not in the Kitchen:
-		say "The [bold type]Collector Automaton[roman type] saunters into the kitchen and starts jumping against the walls, trying to scoop them up.";
+		say "The [bold type]Collector Automaton[roman type] saunters into the kitchen and starts jumping against the walls, attempting to scoop them up.";
 		now the Collector Automaton is in the Kitchen;
 		if the Exposer Automaton is nabbed, now the Exposer Automaton is in the Kitchen;
 		if the locket is nabbed, now the locket is in the Kitchen;
@@ -482,7 +485,7 @@ Carry out basher foyering:
 	now the Basher Automaton is homebodied.
 Carry out collector foyering:
 	if the Collector Automaton is wanderlusted and the Collector Automaton is not in the Foyer:
-		say "The [bold type]Collector Automaton[roman type] barrels down the stairs and starts scooping at the floor. It manages to pick up a piece of lint and looks very pleased with itself.";
+		say "The [bold type]Collector Automaton[roman type] barrels down the stairs and determinedly drags its rim across the carpeted floor of the foyer. It manages to pick up a piece of lint and looks very pleased with itself.";
 		now the Collector Automaton is in the Foyer;
 		if the Exposer Automaton is nabbed, now the Exposer Automaton is in the Foyer;
 		if the locket is nabbed, now the locket is in the Foyer;
@@ -585,7 +588,7 @@ Carry out basher meing:
 		now the player is smushed;
 		end the story saying "VIOLENCE ISN'T THE ANSWER TO THIS ONE".
 Carry out collector meing:
-	if the player is unsmushed and the Collector Automaton is unsmushed, say "The [bold type]Collector Automaton[roman type] makes a valiant attempt to pick you up, but only manages to make your feet bounce around."
+	if the player is unsmushed and the Collector Automaton is unsmushed, say "The [bold type]Collector Automaton[roman type] makes a valiant attempt to pick you up, but only manages to nudge your feet all about."
 Carry out depositor meing:
 	if the player is hoisted, say "The [bold type]Depositor Automaton[roman type] keeps you in its claw.";
 	if everything is unhoisted:
@@ -704,7 +707,7 @@ Carry out basher locketing:
 	now the locket is smushed.
 Carry out collector locketing:
 	if the locket is nabbed:
-		say "The [bold type]Collector Automaton[roman type] runs in circles, causing the locket to sway and clack against its wood.";
+		say "The [bold type]Collector Automaton[roman type] happily runs in circles, causing the locket to sway and clack against its wooden rim.";
 	if the locket is unnabbed:
 		say "The [bold type]Collector Automaton[roman type] rushes towards the locket and bends down to scoop it up. After a few unsuccessful attempts, it manages to snag the locket's chain on one of its handle hinges, suspending it near its rim.";
 		now the locket is nabbed.
@@ -777,7 +780,7 @@ Carry out exposer pantrying:
 	if the pantry is open:
 		say "The [bold type]Exposer Automaton[roman type] coils its rope around the pantry door, but finds no way to open it further.";
 	if the pantry is closed:
-		say "The [bold type]Exposer Automaton[roman type] deftly snakes its rope around the pantry door and flicks it open, revealing a varied selection of dried goods.[line break]On the bottom shelf, you spot some [if the Fastener Automaton is smushed][bold type][end if]dragonsbane[roman type] [unicode 8211] that should be the perfect deterrent for your invader!";
+		say "The [bold type]Exposer Automaton[roman type] deftly snakes its rope around the pantry door and flicks it open, revealing a varied selection of dried goods.[line break]On the bottom shelf, you spot some [bold type]dragonsbane[roman type] [unicode 8211] that should be the perfect deterrent for your invader!";
 		now the dragonsbane is peeped;
 		now the pantry is open.
 Carry out fastener pantrying:
@@ -1159,7 +1162,7 @@ Carry out collector exposing:
 	if the Exposer Automaton is nabbed:
 		say "The [bold type]Collector Automaton[roman type] chases the end of the Exposer Automaton's rope, trying in vain to get every last bit of it into its bucket.";
 	if the Exposer Automaton is unnabbed:
-		say "The [bold type]Collector Automaton[roman type] struggles to wedge its rim underneath the Exposer Automaton's base, but finally manages to pick it up! The exposed length of rope waves about as the Collector Automaton proudly struts around the room.";
+		say "The [bold type]Collector Automaton[roman type] struggles to wedge its rim underneath the Exposer Automaton's base, but finally succeeds in scooping it up! The exposed length of rope waves about as the Collector Automaton proudly struts around the room.";
 		now the Exposer Automaton is nabbed.
 Carry out depositor exposing:
 	say "The Depositor Automaton  the Exposer Automaton."
@@ -1270,11 +1273,14 @@ Carry out depositor gazing:
 	if the Gazer Automaton is hoisted, say "The Gazer Automaton remains in the prongs of the [bold type]Depositor Automaton[roman type].";
 	if everything is unhoisted:
 		if the player is wearing the Gazer Automaton, say "The [bold type]Depositor Automaton[roman type] claws at the Gazer Automaton, but fails to detach it from your head.";
-		if the the player is not wearing the Gazer Automaton:
+		if the player is not wearing the Gazer Automaton:
 			if everything is offgazer:
 				say "The [bold type]Depositor Automaton[roman type] picks up the Gazer Automaton.";
 				now the Gazer Automaton is hoisted;
-			if the player is ongazer, say "The [bold type]Depositor Automaton[roman type] pokes you gently with its claw a few times, but is unable to reach the Gazer Automaton beneath you.";
+			if the player is ongazer:
+				say "The [bold type]Depositor Automaton[roman type] takes hold of the visible piece of the Gazer Automaton, gingerly wiggling the device out from underneath you before hoisting it proudly into the air.";
+				now the player is offgazer;
+				now the Gazer Automaton is hoisted;
 			if the Ambler Automaton is ongazer and the player is offgazer:
 				say "The [bold type]Depositor Automaton[roman type] deftly grabs the Gazer Automaton out from under the Ambler Automaton and lifts it into the air.";
 				now the Ambler Automaton is offgazer;
@@ -1285,7 +1291,7 @@ Carry out depositor gazing:
 				say "The [bold type]Depositor Automaton[roman type] places the Ambler Automaton on the floor so that it stands over the Gazer Automaton.";
 				now the Ambler Automaton is ongazer;
 			if the player is ongazer:
-				say "The [bold type]Depositor Automaton[roman type] lowers the Ambler Automaton onto the floor, over both you and the Gazer Automaton.";
+				say "The [bold type]Depositor Automaton[roman type] lowers the Ambler Automaton onto the floor, over both your head and the Gazer Automaton.";
 				now the Ambler Automaton is onme;
 			now the Ambler Automaton is unhoisted;
 		if the player is wearing the Gazer Automaton:
@@ -1294,7 +1300,7 @@ Carry out depositor gazing:
 			now the Ambler Automaton is unhoisted;
 	if the player is hoisted:
 		if the player is not wearing the Gazer Automaton:
-			if the Ambler Automaton is offgazer, say "The [bold type]Depositor Automaton[roman type] gently lowers your body on top of the Gazer Automaton.";
+			if the Ambler Automaton is offgazer, say "The [bold type]Depositor Automaton[roman type] gently lowers your body on top of the Gazer Automaton, leaving only a small part of the device peeking out from under your robed arm.";
 			if the Ambler Automaton is ongazer, say "The [bold type]Depositor Automaton[roman type] snakes your body under the Ambler Automaton and on top of the Gazer Automaton.";
 			now the player is ongazer;
 			now the player is unhoisted;
